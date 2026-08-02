@@ -1,8 +1,8 @@
-const CACHE_NAME = 'wifi-pro-v1';
+const CACHE_NAME = 'wifi-pro-v2';
 const urlsToCache = [
-  '/wifi-cards-system/?v=pro',
-  '/wifi-cards-system/index.html?v=pro',
-  '/wifi-cards-system/manifest.json?v=pro'
+  '/wifi-cards-system/?v=pro2',
+  '/wifi-cards-system/index.html?v=pro2',
+  '/wifi-cards-system/manifest.json?v=pro2'
 ];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache)).then(() => self.skipWaiting()));
