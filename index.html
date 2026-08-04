@@ -795,14 +795,37 @@ async function getDistStock(date) {
   const dist = await getAll('distTransactions');
   const reports = await getAll('dailyReports');
   const closes = await getAll('monthlyCloses');
-  let stock = {}; CATS.forEach(c => stock[c] = 0);
-  closes.filter(c => c.date <= date).forEach(c => { if (c.distStock) CATS.forEach(x => stock[x] = c.distStock[x]||0); });
-  dist.filter(t => t.type === 'toDist' && t.date <= date).forEach(t => CATS.forEach(c => stock[c] += (t.items[c]||0)));
-  reports.filter(r => r.date <= date).forEach(r => {
+
+  let stock = {}; 
+  CATS.forEach(c => stock[c] = 0);
+
+  // Start from last monthly close before date
+  const prevCloses = closes.filter(c => c.date <= date).sort((a,b) => b.date.localeCompare(a.date));
+  if (prevCloses.length > 0 && prevCloses[0].distStock) {
+    CATS.forEach(c => stock[c] = prevCloses[0].distStock[c] || 0);
+  }
+
+  // Process reports chronologically up to date
+  const prevReports = reports.filter(r => r.date <= date).sort((a,b) => a.date.localeCompare(b.date));
+
+  prevReports.forEach(r => {
+    // Add distributions on this report's date
+    dist.filter(t => t.type === 'toDist' && t.date === r.date).forEach(t => {
+      CATS.forEach(c => stock[c] += (t.items[c]||0));
+    });
+
+    // Subtract sales and free cards
     CATS.forEach(c => stock[c] -= (r.totalSold?.[c]||0));
     stock[100] -= (r.totalFree100||0);
     stock[250] -= (r.totalFree250||0);
   });
+
+  // Add distributions after last report date up to current date
+  const lastReportDate = prevReports.length > 0 ? prevReports[prevReports.length-1].date : (prevCloses.length > 0 ? prevCloses[0].date : '0000-00-00');
+  dist.filter(t => t.type === 'toDist' && t.date > lastReportDate && t.date <= date).forEach(t => {
+    CATS.forEach(c => stock[c] += (t.items[c]||0));
+  });
+
   return stock;
 }
 
@@ -855,28 +878,52 @@ async function initDaily() {
     el('daily-points-container').innerHTML = '<div class="alert warning">⚠️ أضف نقاط بيع أولاً من قسم "النقاط"</div>';
     return;
   }
-  // Auto-fill start stock from yesterday's end or current dist stock
-  const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0,10);
-  const yestReports = (await getAll('dailyReports')).filter(r => r.date === yesterday);
-  if (yestReports.length > 0) {
-    const last = yestReports[yestReports.length-1];
-    CATS.forEach(c => el('start-'+c).value = last.endStock?.[c] || 0);
-  } else {
-    const stock = await getDistStock(yesterday);
-    CATS.forEach(c => el('start-'+c).value = Math.max(0, stock[c]));
-  }
+  await autoFillStartStock();
   addDailyPoint();
   onDailyDateChange();
+}
+
+async function autoFillStartStock() {
+  const currentDate = el('daily-date').value || ts();
+  const reports = await getAll('dailyReports');
+
+  // Find last report before current date
+  const prevReports = reports.filter(r => r.date < currentDate).sort((a,b) => b.date.localeCompare(a.date));
+  const lastReport = prevReports[0];
+
+  let startStock = {};
+
+  if (lastReport && lastReport.endStock) {
+    CATS.forEach(c => startStock[c] = lastReport.endStock[c] || 0);
+
+    // Add any distributions made after last report date up to current date
+    const distTxs = await getAll('distTransactions');
+    distTxs.filter(t => t.type === 'toDist' && t.date > lastReport.date && t.date <= currentDate)
+      .forEach(t => {
+        CATS.forEach(c => startStock[c] = (startStock[c] || 0) + (t.items[c] || 0));
+      });
+  } else {
+    // Fallback: calculate from monthly close + distributions - sales
+    const stock = await getDistStock(currentDate);
+    CATS.forEach(c => startStock[c] = Math.max(0, stock[c]));
+  }
+
+  CATS.forEach(c => {
+    const input = el('start-'+c);
+    if(input) input.value = startStock[c] || 0;
+  });
 }
 
 function onDailyDateChange() {
   const date = el('daily-date').value;
   if (!date) return;
-  // Check if report exists
   getAll('dailyReports').then(reports => {
     const existing = reports.filter(r => r.date === date);
     if (existing.length > 0) {
       loadDailyReport(existing[existing.length-1]);
+    } else {
+      // New date - auto fill start stock from previous report + any new distributions
+      autoFillStartStock();
     }
   });
 }
@@ -968,12 +1015,78 @@ async function saveDailyReport() {
 function showDailyResult(r) {
   let html = '<div class="card">';
   html += '<div class="card-header"><div class="card-title">📊 نتيجة الجرد</div></div>';
-  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">';
-  html += '<div class="alert ' + (r.cardDiff !== 0 ? 'danger' : 'success') + '">';
-  html += '<div><b>📦 الكروت</b></div><div>بداية: ' + fmt(Object.values(r.startStock).reduce((a,b)=>a+b,0)) + '</div><div>نهاية: ' + fmt(Object.values(r.endStock).reduce((a,b)=>a+b,0)) + '</div><div>مباع+مجاني: ' + fmt(Object.values(r.totalSold).reduce((a,b)=>a+b,0) + r.totalFree100 + r.totalFree250) + '</div><div style="margin-top:6px;font-size:16px;">' + (r.cardDiff !== 0 ? '⚠️ فرق: ' + (r.cardDiff > 0 ? '+' : '') + r.cardDiff + ' كرت' : '✅ متوافق تماماً') + '</div></div>';
-  html += '<div class="alert ' + (r.cashDiff !== 0 ? 'danger' : 'success') + '">';
-  html += '<div><b>💰 المبالغ</b></div><div>مبيعات: ' + fmt(r.totalSoldValue) + ' ر.س</div><div>نقدي: ' + fmt(r.cashBag) + ' | إيداع: ' + fmt(r.bankDeposit) + '</div><div>مصروفات: ' + fmt(r.expenses) + '</div><div style="margin-top:6px;font-size:16px;">' + (r.cashDiff !== 0 ? '⚠️ فرق: ' + (r.cashDiff > 0 ? '+' : '') + fmt(r.cashDiff) + ' ر.س' : '✅ متوافق تماماً') + '</div></div>';
-  html += '</div></div>';
+
+  // Cards audit table
+  html += '<div style="margin-bottom:16px;">';
+  html += '<div style="font-weight:700;color:var(--primary);margin-bottom:10px;font-size:15px;">📦 جرد الكروت — تفصيلي</div>';
+  html += '<div class="table-wrap"><table style="font-size:13px;"><thead><tr><th>الفئة</th><th>بداية اليوم</th><th>مباع</th><th>مجاني</th><th>نهاية اليوم</th><th>المتوقع</th><th>الفرق</th></tr></thead><tbody>';
+
+  let totalStart = 0, totalSold = 0, totalFree = 0, totalEnd = 0, totalExpected = 0, totalDiff = 0;
+
+  CATS.forEach(c => {
+    const start = r.startStock?.[c] || 0;
+    const sold = r.totalSold?.[c] || 0;
+    const free = c === 100 ? (r.totalFree100 || 0) : c === 250 ? (r.totalFree250 || 0) : 0;
+    const end = r.endStock?.[c] || 0;
+    const expected = start - sold - free;
+    const diff = end - expected;
+    const diffColor = diff !== 0 ? 'color:var(--danger);font-weight:700;' : 'color:var(--success);font-weight:700;';
+    const diffText = diff > 0 ? `+${diff}` : diff < 0 ? `${diff}` : '✅';
+
+    totalStart += start;
+    totalSold += sold;
+    totalFree += free;
+    totalEnd += end;
+    totalExpected += expected;
+    totalDiff += diff;
+
+    html += `<tr>
+      <td><b>${c} ر.س</b></td>
+      <td>${fmt(start)}</td>
+      <td>${fmt(sold)}</td>
+      <td>${fmt(free)}</td>
+      <td>${fmt(end)}</td>
+      <td>${fmt(expected)}</td>
+      <td style="${diffColor}">${diffText}</td>
+    </tr>`;
+  });
+
+  const totalDiffColor = totalDiff !== 0 ? 'color:var(--danger);' : 'color:var(--success);';
+  html += `<tr style="background:#e3f2fd;font-weight:700;">
+    <td><b>الإجمالي</b></td>
+    <td>${fmt(totalStart)}</td>
+    <td>${fmt(totalSold)}</td>
+    <td>${fmt(totalFree)}</td>
+    <td>${fmt(totalEnd)}</td>
+    <td>${fmt(totalExpected)}</td>
+    <td style="${totalDiffColor}">${totalDiff !== 0 ? (totalDiff > 0 ? '+' : '') + totalDiff : '✅'}</td>
+  </tr>`;
+  html += '</tbody></table></div></div>';
+
+  // Cash audit table
+  html += '<div style="margin-bottom:16px;">';
+  html += '<div style="font-weight:700;color:var(--primary);margin-bottom:10px;font-size:15px;">💰 جرد المبالغ — تفصيلي</div>';
+  html += '<div class="table-wrap"><table style="font-size:13px;"><thead><tr><th>البند</th><th>المبلغ (ر.س)</th></tr></thead><tbody>';
+  html += `<tr><td>💵 قيمة المبيعات</td><td><b>${fmt(r.totalSoldValue||0)}</b></td></tr>`;
+  html += `<tr><td>📋 الديون الآجلة</td><td>${fmt(r.totalDebt||0)}</td></tr>`;
+  html += `<tr><td>💵 النقدي في الكيس</td><td>${fmt(r.cashBag||0)}</td></tr>`;
+  html += `<tr><td>🏦 الإيداع البنكي</td><td>${fmt(r.bankDeposit||0)}</td></tr>`;
+  html += `<tr><td>🔧 المصروفات التشغيلية</td><td>${fmt(r.expenses||0)} ${r.expensesDesc ? '('+r.expensesDesc+')' : ''}</td></tr>`;
+  const totalIn = (r.cashBag||0) + (r.bankDeposit||0) + (r.expenses||0);
+  html += `<tr style="background:#fff3e0;"><td><b>إجمالي ما تم توريده (نقدي + إيداع + مصروفات)</b></td><td><b>${fmt(totalIn)}</b></td></tr>`;
+  html += `<tr style="background:#e3f2fd;font-weight:700;"><td>الفرق في المبالغ</td><td style="${r.cashDiff !== 0 ? 'color:var(--danger);' : 'color:var(--success);'}">${r.cashDiff !== 0 ? (r.cashDiff > 0 ? '+' : '') + fmt(r.cashDiff) + ' ر.س' : '✅ متوافق تماماً'}</td></tr>`;
+  html += '</tbody></table></div></div>';
+
+  // Summary KPI cards
+  html += '<div style="font-weight:700;color:var(--primary);margin-bottom:10px;font-size:15px;">📋 ملخص سريع</div>';
+  html += '<div class="kpi-grid">';
+  html += `<div class="kpi-card ${r.cardDiff !== 0 ? 'danger' : 'success'}"><div class="value">${r.cardDiff !== 0 ? (r.cardDiff > 0 ? '+' : '') + r.cardDiff : '✅'}</div><div class="label">فرق الكروت</div></div>`;
+  html += `<div class="kpi-card ${r.cashDiff !== 0 ? 'danger' : 'success'}"><div class="value">${r.cashDiff !== 0 ? (r.cashDiff > 0 ? '+' : '') + fmt(r.cashDiff) : '✅'}</div><div class="label">فرق المبالغ</div></div>`;
+  html += `<div class="kpi-card info"><div class="value">${fmt(r.totalDebt||0)}</div><div class="label">ديون آجلة</div></div>`;
+  html += `<div class="kpi-card warning"><div class="value">${fmt(r.freeValue||0)}</div><div class="label">قيمة المجاني</div></div>`;
+  html += '</div>';
+
+  html += '</div>';
   el('daily-result').innerHTML = html;
 }
 
