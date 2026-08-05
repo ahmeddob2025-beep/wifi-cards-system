@@ -17,33 +17,23 @@
 *{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',Tahoma,Geneva,sans-serif;-webkit-tap-highlight-color:transparent;}
 body{background:var(--bg);color:var(--text);min-height:100vh;}
 .container{max-width:1400px;margin:0 auto;padding:12px;}
-
-/* Header */
 .header{background:linear-gradient(135deg,var(--primary) 0%,var(--secondary) 100%);color:#fff;padding:18px;text-align:center;position:sticky;top:0;z-index:200;box-shadow:0 4px 15px rgba(0,0,0,0.3);}
 .header h1{font-size:22px;font-weight:700;letter-spacing:0.5px;}
 .header .sub{font-size:12px;opacity:0.8;margin-top:4px;}
-
-/* Bottom Navigation */
 .bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#fff;display:flex;justify-content:space-around;padding:6px 0;box-shadow:0 -4px 20px rgba(0,0,0,0.12);z-index:199;border-top:1px solid var(--border);}
 .bottom-nav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 2px;border:none;background:transparent;color:var(--muted);font-size:11px;font-weight:600;cursor:pointer;transition:0.2s;border-radius:12px;margin:0 4px;}
 .bottom-nav button .icon{font-size:20px;}
 .bottom-nav button.active{color:var(--accent);background:#e3f2fd;}
 .bottom-nav button:hover:not(.active){background:#f8f9fa;}
-
-/* Cards */
 .card{background:var(--card);border-radius:16px;padding:20px;margin-bottom:16px;box-shadow:var(--shadow);border:1px solid rgba(0,0,0,0.04);}
 .card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid #f0f0f0;}
 .card-title{font-size:17px;font-weight:700;color:var(--primary);}
 .card-subtitle{font-size:12px;color:var(--muted);margin-top:2px;}
-
-/* Forms */
 .form-group{margin-bottom:14px;}
 .form-group label{display:block;margin-bottom:6px;font-weight:600;font-size:13px;color:var(--text);}
 .form-group input,.form-group select{width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;outline:none;transition:0.2s;background:#fafbfc;}
 .form-group input:focus,.form-group select:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(33,150,243,0.12);background:#fff;}
 .form-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;}
-
-/* Buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--accent);color:#fff;border:none;padding:12px 24px;font-size:14px;font-weight:700;border-radius:10px;cursor:pointer;transition:0.2s;box-shadow:0 2px 8px rgba(33,150,243,0.3);}
 .btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(33,150,243,0.4);}
 .btn:active{transform:translateY(0);}
@@ -55,20 +45,15 @@ body{background:var(--bg);color:var(--text);min-height:100vh;}
 .btn.small{padding:8px 16px;font-size:12px;}
 .btn.large{padding:14px 32px;font-size:16px;width:100%;}
 .btn:disabled{opacity:0.5;cursor:not-allowed;transform:none;}
-
-/* KPI Cards */
 .kpi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:16px;}
 .kpi-card{background:var(--card);padding:16px;border-radius:14px;text-align:center;box-shadow:var(--shadow);border-left:4px solid var(--accent);position:relative;overflow:hidden;}
 .kpi-card::before{content:'';position:absolute;top:0;right:0;width:60px;height:60px;background:linear-gradient(135deg,transparent 50%,rgba(33,150,243,0.08) 50%);border-radius:0 0 0 60px;}
 .kpi-card .value{font-size:24px;font-weight:800;color:var(--primary);line-height:1;}
 .kpi-card .label{font-size:11px;color:var(--muted);margin-top:6px;font-weight:600;}
-.kpi-card .trend{font-size:11px;margin-top:4px;font-weight:700;}
 .kpi-card.warning{border-left-color:var(--warning);}
 .kpi-card.danger{border-left-color:var(--danger);}
 .kpi-card.success{border-left-color:var(--success);}
 .kpi-card.info{border-left-color:var(--info);}
-
-/* Tables */
 .table-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--border);}
 table{width:100%;border-collapse:collapse;font-size:13px;}
 th,td{padding:12px 10px;text-align:right;border-bottom:1px solid #f0f0f0;}
@@ -76,22 +61,15 @@ th{background:linear-gradient(180deg,#f8f9fa 0%,#e9ecef 100%);font-weight:700;co
 tr:hover{background:#f8f9fa;}
 tr:last-child td{border-bottom:none;}
 .totals-row{background:#e3f2fd !important;font-weight:700;}
-.totals-row td{color:var(--info);}
-
-/* Alerts */
 .alert{padding:14px 16px;border-radius:10px;margin:12px 0;font-size:13px;font-weight:600;display:flex;align-items:center;gap:10px;border-right:4px solid;}
 .alert.success{background:#e8f5e9;border-right-color:var(--success);color:var(--success);}
 .alert.danger{background:#ffebee;border-right-color:var(--danger);color:var(--danger);}
 .alert.warning{background:#fff3e0;border-right-color:var(--warning);color:var(--warning);}
 .alert.info{background:#e3f2fd;border-right-color:var(--info);color:var(--info);}
-
-/* Status Badges */
 .badge{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;}
 .badge.ok{background:#e8f5e9;color:var(--success);}
 .badge.bad{background:#ffebee;color:var(--danger);}
 .badge.warn{background:#fff3e0;color:var(--warning);}
-
-/* Point Row (Daily Report) */
 .point-card{background:#f8f9fa;border-radius:12px;padding:16px;margin-bottom:12px;border:2px solid #e9ecef;transition:0.2s;}
 .point-card:hover{border-color:var(--accent);}
 .point-card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
@@ -101,18 +79,12 @@ tr:last-child td{border-bottom:none;}
 .point-card .form-group label{font-size:11px;color:var(--muted);margin-bottom:3px;}
 .point-card .form-group input{padding:8px 10px;font-size:13px;border-radius:8px;}
 .point-summary{background:#e3f2fd;border-radius:8px;padding:10px;margin-top:10px;font-size:12px;font-weight:600;color:var(--info);display:flex;justify-content:space-between;}
-
-/* Quick Stats Bar */
 .stats-bar{display:flex;gap:8px;overflow-x:auto;padding:4px 0;margin-bottom:16px;}
 .stat-pill{flex-shrink:0;background:var(--card);padding:10px 16px;border-radius:25px;box-shadow:var(--shadow);font-size:12px;font-weight:700;display:flex;align-items:center;gap:6px;}
 .stat-pill .num{font-size:16px;color:var(--primary);}
-
-/* Search */
 .search-wrap{position:relative;margin-bottom:12px;}
 .search-wrap input{width:100%;padding:12px 16px 12px 40px;border:1.5px solid var(--border);border-radius:12px;font-size:14px;background:#fafbfc;}
 .search-wrap::before{content:'🔍';position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:14px;opacity:0.5;}
-
-/* Print Area */
 .print-area{background:#fff;padding:30px;border:1px solid #ccc;max-width:800px;margin:0 auto;}
 .print-header{text-align:center;border-bottom:3px double #000;padding-bottom:15px;margin-bottom:20px;}
 .print-header h2{font-size:22px;margin-bottom:5px;}
@@ -123,42 +95,29 @@ tr:last-child td{border-bottom:none;}
 .print-summary{background:#f8f9fa;border:1px solid #ddd;padding:15px;margin:15px 0;border-radius:4px;}
 .print-summary p{margin:4px 0;font-size:13px;}
 @media print{body *{visibility:hidden;}.print-area,.print-area *{visibility:visible;}.print-area{position:absolute;left:0;top:0;width:100%;}}
-
-/* Animations */
 .section{display:none;animation:fadeSlide 0.3s ease;}
 .section.active{display:block;}
 @keyframes fadeSlide{from{opacity:0;transform:translateY(15px);}to{opacity:1;transform:translateY(0);}}
-
-/* Progress Bar */
 .progress-bar{height:6px;background:#e9ecef;border-radius:3px;overflow:hidden;margin:8px 0;}
 .progress-bar .fill{height:100%;background:var(--accent);border-radius:3px;transition:width 0.5s ease;}
-
-/* Floating Action Button */
 .fab{position:fixed;bottom:80px;left:20px;width:56px;height:56px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:24px;cursor:pointer;box-shadow:0 4px 15px rgba(33,150,243,0.4);z-index:150;display:flex;align-items:center;justify-content:center;transition:0.2s;}
 .fab:hover{transform:scale(1.1);}
-
-/* Modal */
 .modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);z-index:300;display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px);}
 .modal-content{background:#fff;border-radius:16px;padding:24px;max-width:500px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.3);}
 .modal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
 .modal-title{font-size:18px;font-weight:700;color:var(--primary);}
 .modal-close{background:none;border:none;font-size:24px;cursor:pointer;color:var(--muted);}
-
-/* Empty State */
 .empty-state{text-align:center;padding:40px 20px;color:var(--muted);}
 .empty-state .icon{font-size:48px;margin-bottom:12px;opacity:0.5;}
 .empty-state p{font-size:14px;}
-
-/* Scrollbar */
 ::-webkit-scrollbar{width:6px;height:6px;}
 ::-webkit-scrollbar-track{background:transparent;}
 ::-webkit-scrollbar-thumb{background:#c1c1c1;border-radius:3px;}
 ::-webkit-scrollbar-thumb:hover{background:#a8a8a8;}
 .menu-item{width:100%;padding:12px 16px;margin:2px 0;border:none;background:transparent;color:#fff;font-size:14px;font-weight:600;text-align:right;border-radius:10px;cursor:pointer;transition:0.2s;display:flex;align-items:center;gap:10px;}
 .menu-item:hover{background:rgba(255,255,255,0.1);}
-
-
-/* Responsive */
+.delete-btn{cursor:pointer;font-size:18px;padding:4px;border-radius:6px;transition:0.2s;display:inline-block;}
+.delete-btn:hover{background:#ffebee;}
 @media(min-width:768px){
   .kpi-grid{grid-template-columns:repeat(4,1fr);}
   .point-card .form-row{grid-template-columns:repeat(4,1fr);}
@@ -169,23 +128,19 @@ tr:last-child td{border-bottom:none;}
   .bottom-nav button .icon{font-size:18px;}
   .kpi-card .value{font-size:20px;}
 }
-
-/* Hide bottom nav space for content */
 .content-pb{padding-bottom:80px;}
 </style>
 </head>
 <body>
-
 <div class="header" style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;">
   <div style="cursor:pointer;font-size:24px;padding:4px 8px;border-radius:8px;transition:0.2s;" onclick="toggleMenu()" id="menu-btn">☰</div>
   <div style="text-align:center;flex:1;">
     <h1 style="font-size:18px;">📡 نظام إدارة كروت الواي فاي</h1>
-    <div class="sub">الإصدار الاحترافي</div>
+    <div class="sub">الإصدار الاحترافي — النظام المحاسبي الدقيق</div>
   </div>
   <div style="width:40px;"></div>
 </div>
 
-<!-- Side Menu Drawer -->
 <div id="side-menu" style="position:fixed;top:0;right:0;bottom:0;width:280px;background:linear-gradient(180deg,var(--primary) 0%,var(--secondary) 100%);z-index:500;transform:translateX(100%);transition:transform 0.3s ease;box-shadow:-5px 0 30px rgba(0,0,0,0.3);overflow-y:auto;">
   <div style="padding:20px;border-bottom:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;">
     <div style="color:#fff;font-weight:700;font-size:16px;">📡 القائمة</div>
@@ -194,23 +149,20 @@ tr:last-child td{border-bottom:none;}
   <div style="padding:10px;">
     <div style="color:rgba(255,255,255,0.5);font-size:11px;padding:10px 14px;font-weight:700;">الرئيسية</div>
     <button class="menu-item" onclick="showSection('dashboard');toggleMenu();">📊 لوحة التحكم</button>
-
     <div style="color:rgba(255,255,255,0.5);font-size:11px;padding:10px 14px;font-weight:700;margin-top:8px;">الإدارة</div>
     <button class="menu-item" onclick="showSection('points');toggleMenu();">🏪 نقاط البيع</button>
     <button class="menu-item" onclick="showSection('myStock');toggleMenu();">📥 مخزوني</button>
     <button class="menu-item" onclick="showSection('distribute');toggleMenu();">📦 صرف للموزع</button>
-
     <div style="color:rgba(255,255,255,0.5);font-size:11px;padding:10px 14px;font-weight:700;margin-top:8px;">التقارير</div>
     <button class="menu-item" onclick="showSection('daily');toggleMenu();">📝 تقرير يومي</button>
     <button class="menu-item" onclick="showSection('dailyLog');toggleMenu();">📋 سجل التقارير</button>
     <button class="menu-item" onclick="showSection('collections');toggleMenu();">💰 تحصيل ديون</button>
     <button class="menu-item" onclick="showSection('mySales');toggleMenu();">📱 مبيعاتي</button>
-
     <div style="color:rgba(255,255,255,0.5);font-size:11px;padding:10px 14px;font-weight:700;margin-top:8px;">الكشوفات</div>
     <button class="menu-item" onclick="showSection('pointReport');toggleMenu();">📊 كشف نقطة</button>
     <button class="menu-item" onclick="showSection('distributorReport');toggleMenu();">👤 كشف الموزع</button>
+    <button class="menu-item" onclick="showSection('profit');toggleMenu();">📈 كشف الأرباح</button>
     <button class="menu-item" onclick="showSection('monthly');toggleMenu();">📅 الإغلاق الشهري</button>
-
     <div style="color:rgba(255,255,255,0.5);font-size:11px;padding:10px 14px;font-weight:700;margin-top:8px;">النظام</div>
     <button class="menu-item" onclick="showSection('settings');toggleMenu();">⚙️ الإعدادات</button>
   </div>
@@ -222,14 +174,12 @@ tr:last-child td{border-bottom:none;}
 <!-- ==================== DASHBOARD ==================== -->
 <div class="section active" id="sec-dashboard">
   <div id="dash-alerts"></div>
-
   <div class="stats-bar">
     <div class="stat-pill">📦 مخزوني <span class="num" id="dash-total-my">0</span></div>
     <div class="stat-pill">📦 عهدة الموزع <span class="num" id="dash-total-dist">0</span></div>
     <div class="stat-pill">🏪 النقاط <span class="num" id="dash-points-count">0</span></div>
     <div class="stat-pill">💰 مبيعات اليوم <span class="num" id="dash-today-total">0</span></div>
   </div>
-
   <div class="card">
     <div class="card-header"><div><div class="card-title">📦 رصيد المخزون</div><div class="card-subtitle">الكروت المتوفرة حالياً</div></div></div>
     <div class="kpi-grid">
@@ -239,7 +189,6 @@ tr:last-child td{border-bottom:none;}
       <div class="kpi-card" id="kpi-my-1000"><div class="value" id="dash-my-1000">0</div><div class="label">1000 ريال</div></div>
     </div>
   </div>
-
   <div class="card">
     <div class="card-header"><div><div class="card-title">📦 عهدة الموزع</div><div class="card-subtitle">الكروت مع الموزع حالياً</div></div></div>
     <div class="kpi-grid">
@@ -249,17 +198,15 @@ tr:last-child td{border-bottom:none;}
       <div class="kpi-card warning" id="kpi-dist-1000"><div class="value" id="dash-dist-1000">0</div><div class="label">1000 ريال</div></div>
     </div>
   </div>
-
   <div class="card">
     <div class="card-header"><div><div class="card-title">💰 ملخص اليوم</div><div class="card-subtitle" id="dash-date-label"></div></div></div>
     <div class="kpi-grid">
-      <div class="kpi-card success"><div class="value" id="dash-sales">0</div><div class="label">مبيعات</div></div>
-      <div class="kpi-card success"><div class="value" id="dash-cash">0</div><div class="label">نقدي</div></div>
-      <div class="kpi-card danger"><div class="value" id="dash-debt-today">0</div><div class="label">آجل</div></div>
+      <div class="kpi-card success"><div class="value" id="dash-sales">0</div><div class="label">مبيعات الموزع</div></div>
+      <div class="kpi-card success"><div class="value" id="dash-cash">0</div><div class="label">نقدي بالكيس</div></div>
+      <div class="kpi-card danger"><div class="value" id="dash-debt-today">0</div><div class="label">آجل اليوم</div></div>
       <div class="kpi-card info"><div class="value" id="dash-free">0</div><div class="label">مجاني</div></div>
     </div>
   </div>
-
   <div class="card">
     <div class="card-header"><div><div class="card-title">📈 إجمالي الشهر الحالي</div></div></div>
     <div class="kpi-grid">
@@ -269,7 +216,6 @@ tr:last-child td{border-bottom:none;}
       <div class="kpi-card"><div class="value" id="dash-month-mine">0</div><div class="label">مبيعاتي المباشرة</div></div>
     </div>
   </div>
-
   <div class="card">
     <div class="card-header"><div><div class="card-title">⚠️ ديون النقاط</div><div class="card-subtitle">أعلى 5 نقاط مدينة</div></div></div>
     <div id="dash-top-debts"></div>
@@ -286,7 +232,6 @@ tr:last-child td{border-bottom:none;}
     </div>
     <button class="btn success" onclick="addPoint()">➕ إضافة النقطة</button>
   </div>
-
   <div class="card">
     <div class="card-header"><div><div class="card-title">🏪 نقاط البيع</div><div class="card-subtitle">إجمالي: <span id="p-count">0</span> نقطة</div></div></div>
     <div class="search-wrap"><input type="text" id="p-search" placeholder="ابحث عن نقطة..." oninput="filterPoints()"></div>
@@ -312,7 +257,6 @@ tr:last-child td{border-bottom:none;}
     <button class="btn success" onclick="addStock()">➕ تسجيل الدخول</button>
     <div id="stock-msg"></div>
   </div>
-
   <div class="card">
     <div class="card-header"><div><div class="card-title">📦 حركات المخزون</div></div></div>
     <div class="table-wrap"><table>
@@ -320,7 +264,6 @@ tr:last-child td{border-bottom:none;}
       <tbody id="stock-list"></tbody>
     </table></div>
   </div>
-
   <div class="card">
     <div class="card-header"><div><div class="card-title">📊 ملخص المخزون</div></div></div>
     <div class="kpi-grid">
@@ -350,7 +293,6 @@ tr:last-child td{border-bottom:none;}
     <button class="btn success" onclick="distribute()">📦 تسليم العهدة</button>
     <div id="dist-msg"></div>
   </div>
-
   <div class="card">
     <div class="card-header"><div><div class="card-title">📋 سجل الصرف للموزع</div></div></div>
     <div class="table-wrap"><table>
@@ -359,12 +301,10 @@ tr:last-child td{border-bottom:none;}
     </table></div>
   </div>
 </div>
-
 <!-- ==================== DAILY REPORT ==================== -->
 <div class="section" id="sec-daily">
   <div class="card">
     <div class="card-header"><div><div class="card-title">📝 التقرير اليومي</div><div class="card-subtitle">تسجيل عمليات الموزع ليوم كامل</div></div></div>
-
     <div class="form-group"><label for="daily-date">📅 تاريخ التقرير *</label><input type="date" id="daily-date" onchange="onDailyDateChange()"></div>
 
     <div style="background:#e3f2fd;border-radius:10px;padding:14px;margin-bottom:16px;">
@@ -377,9 +317,21 @@ tr:last-child td{border-bottom:none;}
       </div>
     </div>
 
+    <div style="background:#e8f5e9;border-radius:10px;padding:14px;margin-bottom:16px;">
+      <div style="font-weight:700;color:var(--success);margin-bottom:8px;">📥 استلام من المالك اليوم</div>
+      <div class="form-row">
+        <div class="form-group"><label for="recv-100">100</label><input type="number" id="recv-100" value="0" min="0"></div>
+        <div class="form-group"><label for="recv-250">250</label><input type="number" id="recv-250" value="0" min="0"></div>
+        <div class="form-group"><label for="recv-500">500</label><input type="number" id="recv-500" value="0" min="0"></div>
+        <div class="form-group"><label for="recv-1000">1000</label><input type="number" id="recv-1000" value="0" min="0"></div>
+      </div>
+      <div style="font-size:12px;color:var(--muted);margin-top:6px;">الكروت التي استلمها الموزع منك صباحاً أو خلال اليوم</div>
+    </div>
+
     <div style="font-weight:700;color:var(--primary);margin-bottom:10px;">🏪 مبيعات النقاط</div>
     <div id="daily-points-container"></div>
-    <button class="btn info" onclick="addDailyPoint()" style="width:100%;margin-bottom:16px;">➕ إضافة نقطة بيع</button>
+    <button class="btn info" onclick="addDailyPoint()" style="width:100%;margin-bottom:8px;">➕ إضافة نقطة بيع</button>
+    <button class="btn warning" onclick="calcAutoFree()" style="width:100%;margin-bottom:16px;">🎁 حساب الكروت المجانية تلقائياً (2.5%)</button>
 
     <div style="background:#fff3e0;border-radius:10px;padding:14px;margin-bottom:16px;">
       <div style="font-weight:700;color:var(--warning);margin-bottom:8px;">💰 المبالغ والمصروفات</div>
@@ -439,7 +391,6 @@ tr:last-child td{border-bottom:none;}
     <button class="btn success" onclick="saveCollection()">💾 تسجيل التحصيل</button>
     <div id="coll-msg"></div>
   </div>
-
   <div class="card">
     <div class="card-header"><div><div class="card-title">📋 سجل التحصيلات</div></div></div>
     <div class="table-wrap"><table>
@@ -463,7 +414,6 @@ tr:last-child td{border-bottom:none;}
     <button class="btn success" onclick="saveMySale()">💾 تسجيل البيع</button>
     <div id="my-msg"></div>
   </div>
-
   <div class="card">
     <div class="card-header"><div><div class="card-title">📋 سجل مبيعاتي</div></div></div>
     <div class="table-wrap"><table>
@@ -497,6 +447,19 @@ tr:last-child td{border-bottom:none;}
     </div>
     <button class="btn" onclick="loadDistReport()">🔍 عرض الكشف</button>
     <div id="dr-result" style="margin-top:16px;"></div>
+  </div>
+</div>
+
+<!-- ==================== PROFIT REPORT ==================== -->
+<div class="section" id="sec-profit">
+  <div class="card">
+    <div class="card-header"><div><div class="card-title">📈 كشف الأرباح</div></div></div>
+    <div class="form-row">
+      <div class="form-group"><label for="pr-from">من</label><input type="date" id="pr-from"></div>
+      <div class="form-group"><label for="pr-to">إلى</label><input type="date" id="pr-to"></div>
+    </div>
+    <button class="btn" onclick="loadProfitReport()">🔍 عرض الكشف</button>
+    <div id="pr-result" style="margin-top:16px;"></div>
   </div>
 </div>
 
@@ -548,7 +511,6 @@ tr:last-child td{border-bottom:none;}
     <button class="btn success" onclick="saveSettings()">💾 حفظ الإعدادات</button>
     <div id="settings-msg"></div>
   </div>
-
   <div class="card">
     <div class="card-header"><div><div class="card-title">💾 نسخة احتياطية</div></div></div>
     <div style="display:flex;gap:10px;flex-wrap:wrap;">
@@ -571,7 +533,6 @@ tr:last-child td{border-bottom:none;}
 
 </div>
 
-<!-- Bottom Navigation -->
 <div class="bottom-nav">
   <button class="active" onclick="showSection('dashboard')"><span class="icon">📊</span><span>الرئيسية</span></button>
   <button onclick="showSection('points')"><span class="icon">🏪</span><span>النقاط</span></button>
@@ -579,7 +540,6 @@ tr:last-child td{border-bottom:none;}
   <button onclick="showSection('collections')"><span class="icon">💰</span><span>تحصيل</span></button>
   <button onclick="toggleMenu()"><span class="icon">☰</span><span>المزيد</span></button>
 </div>
-
 <script>
 // ==================== CONFIG ====================
 const DB_NAME = 'WifiProDB_v1';
@@ -621,6 +581,11 @@ function el(id) { return document.getElementById(id); }
 function show(id) { document.querySelectorAll('.section').forEach(s => s.classList.remove('active')); document.querySelectorAll('.bottom-nav button').forEach(b => b.classList.remove('active')); el('sec-'+id).classList.add('active'); if(event && event.target) event.target.classList.add('active'); }
 function setText(id, txt) { const e = el(id); if(e) e.textContent = txt; }
 function alertBox(id, msg, type) { const e = el(id); if(e) e.innerHTML = msg ? '<div class="alert '+type+'">'+msg+'</div>' : ''; }
+function getYesterday(dateStr) {
+  const d = new Date(dateStr + 'T00:00:00');
+  d.setDate(d.getDate() - 1);
+  return d.toISOString().slice(0,10);
+}
 
 // ==================== SETTINGS ====================
 async function loadSettings() {
@@ -681,6 +646,7 @@ function showSection(id) {
   if (id === 'mySales') refreshMySales();
   if (id === 'pointReport') initPointReport();
   if (id === 'distributorReport') initDistReport();
+  if (id === 'profit') initProfit();
   if (id === 'monthly') initMonthly();
   if (id === 'settings') loadSettings();
 }
@@ -696,7 +662,6 @@ async function addPoint() {
 }
 async function deletePoint(id) {
   if (!confirm('حذف النقطة؟ سيتم حذف جميع حركاتها أيضاً!')) return;
-  // Note: In a real app we'd cascade delete, but for simplicity just delete the point
   await del('points', id);
   refreshPoints();
 }
@@ -716,28 +681,27 @@ async function refreshPoints() {
   let html = '';
   for (let i = 0; i < points.length; i++) {
     const p = points[i];
-    let buy = 0, cash = 0, debt = 0;
+    let buy = 0, cash = 0;
     reports.forEach(r => {
       if (!r.points) return;
       const pd = r.points.find(x => x.pointId === p.id);
       if (!pd) return;
       CATS.forEach(c => buy += (pd['s'+c]||0) * prices[c].sell);
       cash += pd.cash || 0;
-      debt += pd.debt || 0;
     });
     const coll = collections.filter(c => c.pointId === p.id).reduce((a,b) => a + (b.amount||0), 0);
     const rem = buy - cash - coll;
     const lastColl = collections.filter(c => c.pointId === p.id).sort((a,b) => b.ts - a.ts)[0];
-    html += `<tr>
-      <td>${i+1}</td>
-      <td><b>${p.name}</b></td>
-      <td>${p.phone||'-'}</td>
-      <td>${fmt(buy)}</td>
-      <td>${fmt(cash+coll)}</td>
-      <td style="color:${rem>0?'var(--danger)':'var(--success)'};font-weight:700;">${fmt(rem)}</td>
-      <td>${lastColl ? lastColl.date : '-'}</td>
-      <td><span class="delete-btn" onclick="deletePoint(${p.id})">🗑️</span></td>
-    </tr>`;
+    html += '<tr>' +
+      '<td>'+(i+1)+'</td>' +
+      '<td><b>'+p.name+'</b></td>' +
+      '<td>'+(p.phone||'-')+'</td>' +
+      '<td>'+fmt(buy)+'</td>' +
+      '<td>'+fmt(cash+coll)+'</td>' +
+      '<td style="color:'+(rem>0?'var(--danger)':'var(--success)')+';font-weight:700;">'+fmt(rem)+'</td>' +
+      '<td>'+(lastColl ? lastColl.date : '-')+'</td>' +
+      '<td><span class="delete-btn" onclick="deletePoint('+p.id+')">🗑️</span></td>' +
+    '</tr>';
   }
   el('p-list').innerHTML = html || '<tr><td colspan="8" style="text-align:center;color:var(--muted);padding:20px;">لا توجد نقاط</td></tr>';
 }
@@ -767,65 +731,64 @@ async function refreshStock() {
   stockIn.sort((a,b) => b.ts - a.ts);
   let html = '';
   stockIn.forEach(s => {
-    html += `<tr><td>${s.date}</td><td>${s.items[100]||0}</td><td>${s.items[250]||0}</td><td>${s.items[500]||0}</td><td>${s.items[1000]||0}</td><td>${fmt(s.totalCost)}</td><td>${s.note||'-'}</td><td><span class="delete-btn" onclick="deleteStock(${s.id})">🗑️</span></td></tr>`;
+    html += '<tr><td>'+s.date+'</td><td>'+(s.items[100]||0)+'</td><td>'+(s.items[250]||0)+'</td><td>'+(s.items[500]||0)+'</td><td>'+(s.items[1000]||0)+'</td><td>'+fmt(s.totalCost)+'</td><td>'+(s.note||'-')+'</td><td><span class="delete-btn" onclick="deleteStock('+s.id+')">🗑️</span></td></tr>';
   });
   el('stock-list').innerHTML = html || '<tr><td colspan="8" style="text-align:center;color:var(--muted);padding:20px;">لا توجد حركات</td></tr>';
-  // Summary
   let totalIn = {}; CATS.forEach(c => totalIn[c] = 0);
   stockIn.forEach(s => CATS.forEach(c => totalIn[c] += (s.items[c]||0)));
   CATS.forEach(c => setText('stock-in-'+c, fmt(totalIn[c])));
   const cur = await getMyStock(ts());
-  setText('stock-current', `100: ${fmt(cur[100])} | 250: ${fmt(cur[250])} | 500: ${fmt(cur[500])} | 1000: ${fmt(cur[1000])}`);
+  setText('stock-current', '100: '+fmt(cur[100])+' | 250: '+fmt(cur[250])+' | 500: '+fmt(cur[500])+' | 1000: '+fmt(cur[1000]));
 }
 
-// ==================== STOCK CALCULATIONS ====================
+// ==================== STOCK CALCULATIONS (FIXED) ====================
 async function getMyStock(date) {
-  const stockIn = await getAll('stockIn');
-  const dist = await getAll('distTransactions');
-  const sales = await getAll('mySales');
   const closes = await getAll('monthlyCloses');
-  let stock = {}; CATS.forEach(c => stock[c] = 0);
-  closes.filter(c => c.date <= date).forEach(c => { if (c.myStock) CATS.forEach(x => stock[x] = c.myStock[x]||0); });
-  stockIn.filter(s => s.date <= date).forEach(s => CATS.forEach(c => stock[c] += (s.items[c]||0)));
-  dist.filter(t => t.type === 'toDist' && t.date <= date).forEach(t => CATS.forEach(c => stock[c] -= (t.items[c]||0)));
-  sales.filter(s => s.date <= date).forEach(s => CATS.forEach(c => stock[c] -= (s.items[c]||0)));
+  const stockIn = await getAll('stockIn');
+  const dists = await getAll('distTransactions');
+  const sales = await getAll('mySales');
+
+  const lastClose = closes.filter(c => c.date <= date).sort((a,b) => b.date.localeCompare(a.date))[0];
+  let stock = {};
+  CATS.forEach(c => stock[c] = lastClose ? (lastClose.myStock?.[c] || 0) : 0);
+
+  const startDate = lastClose ? lastClose.date : '0000-00-00';
+
+  stockIn.filter(s => s.date > startDate && s.date <= date)
+    .forEach(s => CATS.forEach(c => stock[c] += (s.items[c] || 0)));
+
+  dists.filter(t => t.type === 'toDist' && t.date > startDate && t.date <= date)
+    .forEach(t => CATS.forEach(c => stock[c] -= (t.items[c] || 0)));
+
+  sales.filter(s => s.date > startDate && s.date <= date)
+    .forEach(s => CATS.forEach(c => stock[c] -= (s.items[c] || 0)));
+
+  CATS.forEach(c => stock[c] = Math.max(0, stock[c]));
   return stock;
 }
+
 async function getDistStock(date) {
-  const dist = await getAll('distTransactions');
-  const reports = await getAll('dailyReports');
   const closes = await getAll('monthlyCloses');
+  const dists = await getAll('distTransactions');
+  const reports = await getAll('dailyReports');
 
-  let stock = {}; 
-  CATS.forEach(c => stock[c] = 0);
+  const lastClose = closes.filter(c => c.date <= date).sort((a,b) => b.date.localeCompare(a.date))[0];
+  let stock = {};
+  CATS.forEach(c => stock[c] = lastClose ? (lastClose.distStock?.[c] || 0) : 0);
 
-  // Start from last monthly close before date
-  const prevCloses = closes.filter(c => c.date <= date).sort((a,b) => b.date.localeCompare(a.date));
-  if (prevCloses.length > 0 && prevCloses[0].distStock) {
-    CATS.forEach(c => stock[c] = prevCloses[0].distStock[c] || 0);
-  }
+  const startDate = lastClose ? lastClose.date : '0000-00-00';
 
-  // Process reports chronologically up to date
-  const prevReports = reports.filter(r => r.date <= date).sort((a,b) => a.date.localeCompare(b.date));
+  dists.filter(t => t.type === 'toDist' && t.date > startDate && t.date <= date)
+    .forEach(t => CATS.forEach(c => stock[c] += (t.items[c] || 0)));
 
-  prevReports.forEach(r => {
-    // Add distributions on this report's date
-    dist.filter(t => t.type === 'toDist' && t.date === r.date).forEach(t => {
-      CATS.forEach(c => stock[c] += (t.items[c]||0));
+  reports.filter(r => r.date > startDate && r.date <= date)
+    .forEach(r => {
+      CATS.forEach(c => stock[c] -= (r.totalSold?.[c] || 0));
+      stock[100] -= (r.totalFree100 || 0);
+      stock[250] -= (r.totalFree250 || 0);
     });
 
-    // Subtract sales and free cards
-    CATS.forEach(c => stock[c] -= (r.totalSold?.[c]||0));
-    stock[100] -= (r.totalFree100||0);
-    stock[250] -= (r.totalFree250||0);
-  });
-
-  // Add distributions after last report date up to current date
-  const lastReportDate = prevReports.length > 0 ? prevReports[prevReports.length-1].date : (prevCloses.length > 0 ? prevCloses[0].date : '0000-00-00');
-  dist.filter(t => t.type === 'toDist' && t.date > lastReportDate && t.date <= date).forEach(t => {
-    CATS.forEach(c => stock[c] += (t.items[c]||0));
-  });
-
+  CATS.forEach(c => stock[c] = Math.max(0, stock[c]));
   return stock;
 }
 
@@ -838,7 +801,7 @@ async function refreshDistribute() {
   dist.sort((a,b) => b.ts - a.ts);
   let html = '';
   dist.forEach(t => {
-    html += `<tr><td>${t.date}</td><td>${t.items[100]||0}</td><td>${t.items[250]||0}</td><td>${t.items[500]||0}</td><td>${t.items[1000]||0}</td><td>${fmt(t.totalCost)}</td><td><span class="delete-btn" onclick="deleteDist(${t.id})">🗑️</span></td></tr>`;
+    html += '<tr><td>'+t.date+'</td><td>'+(t.items[100]||0)+'</td><td>'+(t.items[250]||0)+'</td><td>'+(t.items[500]||0)+'</td><td>'+(t.items[1000]||0)+'</td><td>'+fmt(t.totalCost)+'</td><td><span class="delete-btn" onclick="deleteDist('+t.id+')">🗑️</span></td></tr>';
   });
   el('dist-list').innerHTML = html || '<tr><td colspan="7" style="text-align:center;color:var(--muted);padding:20px;">لا توجد حركات</td></tr>';
 }
@@ -850,7 +813,7 @@ async function distribute() {
   if (total <= 0) return alert('أدخل كمية');
   const myStock = await getMyStock(date);
   for (const c of CATS) {
-    if (items[c] > myStock[c]) return alert(`رصيدك من فئة ${c} لا يكفي (متاح: ${fmt(myStock[c])})`);
+    if (items[c] > myStock[c]) return alert('رصيدك من فئة '+c+' لا يكفي (متاح: '+fmt(myStock[c])+')');
   }
   await add('distTransactions', { date, items, totalCost: total, type: 'toDist', ts: Date.now() });
   alertBox('dist-msg', '✅ تم الصرف للموزع', 'success');
@@ -865,7 +828,7 @@ async function deleteDist(id) {
   refreshDashboard();
 }
 
-// ==================== DAILY REPORT ====================
+// ==================== DAILY REPORT (FIXED) ====================
 let dailyPointCards = [];
 
 async function initDaily() {
@@ -884,33 +847,12 @@ async function initDaily() {
 }
 
 async function autoFillStartStock() {
-  const currentDate = el('daily-date').value || ts();
-  const reports = await getAll('dailyReports');
-
-  // Find last report before current date
-  const prevReports = reports.filter(r => r.date < currentDate).sort((a,b) => b.date.localeCompare(a.date));
-  const lastReport = prevReports[0];
-
-  let startStock = {};
-
-  if (lastReport && lastReport.endStock) {
-    CATS.forEach(c => startStock[c] = lastReport.endStock[c] || 0);
-
-    // Add any distributions made after last report date up to current date
-    const distTxs = await getAll('distTransactions');
-    distTxs.filter(t => t.type === 'toDist' && t.date > lastReport.date && t.date <= currentDate)
-      .forEach(t => {
-        CATS.forEach(c => startStock[c] = (startStock[c] || 0) + (t.items[c] || 0));
-      });
-  } else {
-    // Fallback: calculate from monthly close + distributions - sales
-    const stock = await getDistStock(currentDate);
-    CATS.forEach(c => startStock[c] = Math.max(0, stock[c]));
-  }
-
+  const date = el('daily-date').value || ts();
+  const yesterday = getYesterday(date);
+  const stock = await getDistStock(yesterday);
   CATS.forEach(c => {
     const input = el('start-'+c);
-    if(input) input.value = startStock[c] || 0;
+    if(input) input.value = stock[c] || 0;
   });
 }
 
@@ -922,8 +864,8 @@ function onDailyDateChange() {
     if (existing.length > 0) {
       loadDailyReport(existing[existing.length-1]);
     } else {
-      // New date - auto fill start stock from previous report + any new distributions
       autoFillStartStock();
+      CATS.forEach(c => { el('recv-'+c).value = 0; });
     }
   });
 }
@@ -933,30 +875,29 @@ function addDailyPoint() {
   const idx = dailyPointCards.length;
   const cardId = 'dpc-'+idx;
   dailyPointCards.push(cardId);
-  const opts = allPointsCache.map(p => `<option value="${p.id}">${p.name}</option>`).join('');
+  const opts = allPointsCache.map(p => '<option value="'+p.id+'">'+p.name+'</option>').join('');
   const div = document.createElement('div');
   div.className = 'point-card';
   div.id = cardId;
-  div.innerHTML = `
-    <div class="point-card-header">
-      <div class="point-card-title">🏪 نقطة البيع</div>
-      <button class="btn danger small" onclick="removeDailyPoint('${cardId}')">🗑️ حذف</button>
-    </div>
-    <div class="form-group"><label for="dpc-${idx}-point">اختر النقطة</label><select id="dpc-${idx}-point">${opts}</select></div>
-    <div class="form-row">
-      <div class="form-group"><label for="dpc-${idx}-100">100 ريال</label><input type="number" id="dpc-${idx}-100" value="0" min="0" onchange="calcDailyPoint(${idx})"></div>
-      <div class="form-group"><label for="dpc-${idx}-250">250 ريال</label><input type="number" id="dpc-${idx}-250" value="0" min="0" onchange="calcDailyPoint(${idx})"></div>
-      <div class="form-group"><label for="dpc-${idx}-500">500 ريال</label><input type="number" id="dpc-${idx}-500" value="0" min="0" onchange="calcDailyPoint(${idx})"></div>
-      <div class="form-group"><label for="dpc-${idx}-1000">1000 ريال</label><input type="number" id="dpc-${idx}-1000" value="0" min="0" onchange="calcDailyPoint(${idx})"></div>
-    </div>
-    <div class="form-row">
-      <div class="form-group"><label for="dpc-${idx}-cash">💵 نقدي</label><input type="number" id="dpc-${idx}-cash" value="0" min="0"></div>
-      <div class="form-group"><label for="dpc-${idx}-debt">📋 آجل</label><input type="number" id="dpc-${idx}-debt" value="0" min="0"></div>
-      <div class="form-group"><label for="dpc-${idx}-free100">🎁 مجاني 100</label><input type="number" id="dpc-${idx}-free100" value="0" min="0" onchange="calcDailyPoint(${idx})"></div>
-      <div class="form-group"><label for="dpc-${idx}-free250">🎁 مجاني 250</label><input type="number" id="dpc-${idx}-free250" value="0" min="0" onchange="calcDailyPoint(${idx})"></div>
-    </div>
-    <div class="point-summary" id="dpc-${idx}-summary">القيمة: 0 ر.س | المجاني: 0 ر.س</div>
-  `;
+  div.innerHTML = 
+    '<div class="point-card-header">' +
+      '<div class="point-card-title">🏪 نقطة البيع</div>' +
+      '<button class="btn danger small" onclick="removeDailyPoint(''+cardId+'')">🗑️ حذف</button>' +
+    '</div>' +
+    '<div class="form-group"><label for="dpc-'+idx+'-point">اختر النقطة</label><select id="dpc-'+idx+'-point">'+opts+'</select></div>' +
+    '<div class="form-row">' +
+      '<div class="form-group"><label for="dpc-'+idx+'-100">100 ريال</label><input type="number" id="dpc-'+idx+'-100" value="0" min="0" onchange="calcDailyPoint('+idx+')"></div>' +
+      '<div class="form-group"><label for="dpc-'+idx+'-250">250 ريال</label><input type="number" id="dpc-'+idx+'-250" value="0" min="0" onchange="calcDailyPoint('+idx+')"></div>' +
+      '<div class="form-group"><label for="dpc-'+idx+'-500">500 ريال</label><input type="number" id="dpc-'+idx+'-500" value="0" min="0" onchange="calcDailyPoint('+idx+')"></div>' +
+      '<div class="form-group"><label for="dpc-'+idx+'-1000">1000 ريال</label><input type="number" id="dpc-'+idx+'-1000" value="0" min="0" onchange="calcDailyPoint('+idx+')"></div>' +
+    '</div>' +
+    '<div class="form-row">' +
+      '<div class="form-group"><label for="dpc-'+idx+'-cash">💵 نقدي</label><input type="number" id="dpc-'+idx+'-cash" value="0" min="0"></div>' +
+      '<div class="form-group"><label for="dpc-'+idx+'-debt">📋 آجل</label><input type="number" id="dpc-'+idx+'-debt" value="0" min="0"></div>' +
+      '<div class="form-group"><label for="dpc-'+idx+'-free100">🎁 مجاني 100</label><input type="number" id="dpc-'+idx+'-free100" value="0" min="0" onchange="calcDailyPoint('+idx+')"></div>' +
+      '<div class="form-group"><label for="dpc-'+idx+'-free250">🎁 مجاني 250</label><input type="number" id="dpc-'+idx+'-free250" value="0" min="0" onchange="calcDailyPoint('+idx+')"></div>' +
+    '</div>' +
+    '<div class="point-summary" id="dpc-'+idx+'-summary">القيمة: 0 ر.س | المجاني: 0 ر.س</div>';
   el('daily-points-container').appendChild(div);
 }
 
@@ -970,43 +911,100 @@ function calcDailyPoint(idx) {
   CATS.forEach(c => val += num('dpc-'+idx+'-'+c) * prices[c].sell);
   const freeVal = num('dpc-'+idx+'-free100') * prices[100].sell + num('dpc-'+idx+'-free250') * prices[250].sell;
   const sum = el('dpc-'+idx+'-summary');
-  if (sum) sum.innerHTML = `القيمة: ${fmt(val)} ر.س | المجاني: ${fmt(freeVal)} ر.س`;
+  if (sum) sum.innerHTML = 'القيمة: '+fmt(val)+' ر.س | المجاني: '+fmt(freeVal)+' ر.س';
+}
+
+function calcAutoFree() {
+  for (let i = 0; i < dailyPointCards.length; i++) {
+    const cardId = dailyPointCards[i];
+    const idx = parseInt(cardId.split('-')[1]);
+    const pointEl = el('dpc-'+idx+'-point');
+    if (!pointEl) continue;
+
+    let value = 0;
+    CATS.forEach(c => value += num('dpc-'+idx+'-'+c) * prices[c].sell);
+    const freeValue = value * (freePct / 100);
+
+    const price250 = prices[250].sell;
+    const price100 = prices[100].sell;
+
+    let free250 = Math.floor(freeValue / price250);
+    let remaining = freeValue - (free250 * price250);
+    let free100 = Math.round(remaining / price100);
+
+    const actualFreeValue = free250 * price250 + free100 * price100;
+    if (actualFreeValue > freeValue * 1.1) {
+      if (free100 > 0) free100--;
+    }
+
+    el('dpc-'+idx+'-free250').value = free250;
+    el('dpc-'+idx+'-free100').value = free100;
+    calcDailyPoint(idx);
+  }
+  alertBox('daily-result', '🎁 تم حساب الكروت المجانية تلقائياً بناءً على نسبة '+freePct+'%', 'info');
 }
 
 async function saveDailyReport() {
   const date = el('daily-date').value;
   if (!date) return alert('اختر التاريخ');
+
   const startStock = {}; CATS.forEach(c => startStock[c] = num('start-'+c));
+  const receivedFromOwner = {}; CATS.forEach(c => receivedFromOwner[c] = num('recv-'+c));
   const endStock = {}; CATS.forEach(c => endStock[c] = num('end-'+c));
+
   let totalSold = {}; CATS.forEach(c => totalSold[c] = 0);
   let totalCash = 0, totalDebt = 0, totalSoldValue = 0, totalFree100 = 0, totalFree250 = 0;
   const points = [];
+
   for (let i = 0; i < dailyPointCards.length; i++) {
-    const pointEl = el('dpc-'+i+'-point');
+    const cardId = dailyPointCards[i];
+    const idx = parseInt(cardId.split('-')[1]);
+    const pointEl = el('dpc-'+idx+'-point');
     if (!pointEl) continue;
     const pointId = parseInt(pointEl.value);
     const p = { pointId };
-    CATS.forEach(c => { p['s'+c] = num('dpc-'+i+'-'+c); totalSold[c] += p['s'+c]; totalSoldValue += p['s'+c] * prices[c].sell; });
-    p.cash = num('dpc-'+i+'-cash');
-    p.debt = num('dpc-'+i+'-debt');
-    p.free100 = num('dpc-'+i+'-free100');
-    p.free250 = num('dpc-'+i+'-free250');
-    totalCash += p.cash; totalDebt += p.debt; totalFree100 += p.free100; totalFree250 += p.free250;
+    CATS.forEach(c => { 
+      p['s'+c] = num('dpc-'+idx+'-'+c); 
+      totalSold[c] += p['s'+c]; 
+      totalSoldValue += p['s'+c] * prices[c].sell; 
+    });
+    p.cash = num('dpc-'+idx+'-cash');
+    p.debt = num('dpc-'+idx+'-debt');
+    p.free100 = num('dpc-'+idx+'-free100');
+    p.free250 = num('dpc-'+idx+'-free250');
+    totalCash += p.cash; 
+    totalDebt += p.debt; 
+    totalFree100 += p.free100; 
+    totalFree250 += p.free250;
     points.push(p);
   }
+
   const cashBag = num('cash-bag');
   const bankDeposit = num('bank-deposit');
   const expenses = num('expenses');
   const expensesDesc = el('expenses-desc').value;
-  const expectedCash = totalSoldValue;
-  const actualCash = cashBag + bankDeposit + expenses;
-  const cashDiff = actualCash - expectedCash;
+
+  // Card audit: start + received - sold - free = expected end
   const totalStart = Object.values(startStock).reduce((a,b) => a+b, 0);
-  const totalEnd = Object.values(endStock).reduce((a,b) => a+b, 0);
+  const totalIn = Object.values(receivedFromOwner).reduce((a,b) => a+b, 0);
   const totalOut = Object.values(totalSold).reduce((a,b) => a+b, 0) + totalFree100 + totalFree250;
-  const cardDiff = totalStart - totalEnd - totalOut;
+  const totalEnd = Object.values(endStock).reduce((a,b) => a+b, 0);
+  const expectedEnd = totalStart + totalIn - totalOut;
+  const cardDiff = totalEnd - expectedEnd;
+
+  // Cash audit: cash from invoices should equal bag + deposit + expenses
+  const actualCash = cashBag + bankDeposit + expenses;
+  const cashDiff = actualCash - totalCash;
+
   const freeValue = totalFree100 * prices[100].sell + totalFree250 * prices[250].sell;
-  const report = { date, startStock, endStock, points, totalSold, totalCash, totalDebt, totalSoldValue, totalFree100, totalFree250, freeValue, cashBag, bankDeposit, expenses, expensesDesc, cashDiff, cardDiff, ts: Date.now() };
+
+  const report = { 
+    date, startStock, receivedFromOwner, endStock, points, 
+    totalSold, totalCash, totalDebt, totalSoldValue, 
+    totalFree100, totalFree250, freeValue, 
+    cashBag, bankDeposit, expenses, expensesDesc, 
+    cashDiff, cardDiff, ts: Date.now() 
+  };
   await add('dailyReports', report);
   showDailyResult(report);
   refreshDashboard();
@@ -1019,80 +1017,82 @@ function showDailyResult(r) {
   // Cards audit table
   html += '<div style="margin-bottom:16px;">';
   html += '<div style="font-weight:700;color:var(--primary);margin-bottom:10px;font-size:15px;">📦 جرد الكروت — تفصيلي</div>';
-  html += '<div class="table-wrap"><table style="font-size:13px;"><thead><tr><th>الفئة</th><th>بداية اليوم</th><th>مباع</th><th>مجاني</th><th>نهاية اليوم</th><th>المتوقع</th><th>الفرق</th></tr></thead><tbody>';
+  html += '<div class="table-wrap"><table style="font-size:13px;"><thead><tr><th>الفئة</th><th>بداية</th><th>استلام</th><th>مباع</th><th>مجاني</th><th>نهاية</th><th>المتوقع</th><th>الفرق</th></tr></thead><tbody>';
 
-  let totalStart = 0, totalSold = 0, totalFree = 0, totalEnd = 0, totalExpected = 0, totalDiff = 0;
+  let totalStart = 0, totalIn = 0, totalSold = 0, totalFree = 0, totalEnd = 0, totalExpected = 0, totalDiff = 0;
 
   CATS.forEach(c => {
     const start = r.startStock?.[c] || 0;
+    const recv = r.receivedFromOwner?.[c] || 0;
     const sold = r.totalSold?.[c] || 0;
     const free = c === 100 ? (r.totalFree100 || 0) : c === 250 ? (r.totalFree250 || 0) : 0;
     const end = r.endStock?.[c] || 0;
-    const expected = start - sold - free;
+    const expected = start + recv - sold - free;
     const diff = end - expected;
     const diffColor = diff !== 0 ? 'color:var(--danger);font-weight:700;' : 'color:var(--success);font-weight:700;';
-    const diffText = diff > 0 ? `+${diff}` : diff < 0 ? `${diff}` : '✅';
+    const diffText = diff > 0 ? '+'+diff : diff < 0 ? ''+diff : '✅';
 
-    totalStart += start;
-    totalSold += sold;
-    totalFree += free;
-    totalEnd += end;
-    totalExpected += expected;
-    totalDiff += diff;
+    totalStart += start; totalIn += recv; totalSold += sold; totalFree += free;
+    totalEnd += end; totalExpected += expected; totalDiff += diff;
 
-    html += `<tr>
-      <td><b>${c} ر.س</b></td>
-      <td>${fmt(start)}</td>
-      <td>${fmt(sold)}</td>
-      <td>${fmt(free)}</td>
-      <td>${fmt(end)}</td>
-      <td>${fmt(expected)}</td>
-      <td style="${diffColor}">${diffText}</td>
-    </tr>`;
+    html += '<tr>' +
+      '<td><b>'+c+' ر.س</b></td>' +
+      '<td>'+fmt(start)+'</td>' +
+      '<td>'+fmt(recv)+'</td>' +
+      '<td>'+fmt(sold)+'</td>' +
+      '<td>'+fmt(free)+'</td>' +
+      '<td>'+fmt(end)+'</td>' +
+      '<td>'+fmt(expected)+'</td>' +
+      '<td style="'+diffColor+'">'+diffText+'</td>' +
+    '</tr>';
   });
 
   const totalDiffColor = totalDiff !== 0 ? 'color:var(--danger);' : 'color:var(--success);';
-  html += `<tr style="background:#e3f2fd;font-weight:700;">
-    <td><b>الإجمالي</b></td>
-    <td>${fmt(totalStart)}</td>
-    <td>${fmt(totalSold)}</td>
-    <td>${fmt(totalFree)}</td>
-    <td>${fmt(totalEnd)}</td>
-    <td>${fmt(totalExpected)}</td>
-    <td style="${totalDiffColor}">${totalDiff !== 0 ? (totalDiff > 0 ? '+' : '') + totalDiff : '✅'}</td>
-  </tr>`;
+  html += '<tr style="background:#e3f2fd;font-weight:700;">' +
+    '<td><b>الإجمالي</b></td>' +
+    '<td>'+fmt(totalStart)+'</td>' +
+    '<td>'+fmt(totalIn)+'</td>' +
+    '<td>'+fmt(totalSold)+'</td>' +
+    '<td>'+fmt(totalFree)+'</td>' +
+    '<td>'+fmt(totalEnd)+'</td>' +
+    '<td>'+fmt(totalExpected)+'</td>' +
+    '<td style="'+totalDiffColor+'">'+(totalDiff !== 0 ? (totalDiff > 0 ? '+' : '') + totalDiff : '✅')+'</td>' +
+  '</tr>';
   html += '</tbody></table></div></div>';
 
   // Cash audit table
   html += '<div style="margin-bottom:16px;">';
   html += '<div style="font-weight:700;color:var(--primary);margin-bottom:10px;font-size:15px;">💰 جرد المبالغ — تفصيلي</div>';
   html += '<div class="table-wrap"><table style="font-size:13px;"><thead><tr><th>البند</th><th>المبلغ (ر.س)</th></tr></thead><tbody>';
-  html += `<tr><td>💵 قيمة المبيعات</td><td><b>${fmt(r.totalSoldValue||0)}</b></td></tr>`;
-  html += `<tr><td>📋 الديون الآجلة</td><td>${fmt(r.totalDebt||0)}</td></tr>`;
-  html += `<tr><td>💵 النقدي في الكيس</td><td>${fmt(r.cashBag||0)}</td></tr>`;
-  html += `<tr><td>🏦 الإيداع البنكي</td><td>${fmt(r.bankDeposit||0)}</td></tr>`;
-  html += `<tr><td>🔧 المصروفات التشغيلية</td><td>${fmt(r.expenses||0)} ${r.expensesDesc ? '('+r.expensesDesc+')' : ''}</td></tr>`;
-  const totalIn = (r.cashBag||0) + (r.bankDeposit||0) + (r.expenses||0);
-  html += `<tr style="background:#fff3e0;"><td><b>إجمالي ما تم توريده (نقدي + إيداع + مصروفات)</b></td><td><b>${fmt(totalIn)}</b></td></tr>`;
-  html += `<tr style="background:#e3f2fd;font-weight:700;"><td>الفرق في المبالغ</td><td style="${r.cashDiff !== 0 ? 'color:var(--danger);' : 'color:var(--success);'}">${r.cashDiff !== 0 ? (r.cashDiff > 0 ? '+' : '') + fmt(r.cashDiff) + ' ر.س' : '✅ متوافق تماماً'}</td></tr>`;
+  html += '<tr><td>💵 قيمة المبيعات (النقدي من الفواتير)</td><td><b>'+fmt(r.totalCash||0)+'</b></td></tr>';
+  html += '<tr><td>📋 الديون الآجلة</td><td>'+fmt(r.totalDebt||0)+'</td></tr>';
+  html += '<tr><td>💵 النقدي في الكيس</td><td>'+fmt(r.cashBag||0)+'</td></tr>';
+  html += '<tr><td>🏦 الإيداع البنكي</td><td>'+fmt(r.bankDeposit||0)+'</td></tr>';
+  html += '<tr><td>🔧 المصروفات التشغيلية</td><td>'+fmt(r.expenses||0)+(r.expensesDesc ? ' ('+r.expensesDesc+')' : '')+'</td></tr>';
+  const totalInCash = (r.cashBag||0) + (r.bankDeposit||0) + (r.expenses||0);
+  html += '<tr style="background:#fff3e0;"><td><b>إجمالي ما تم توريده (نقدي + إيداع + مصروفات)</b></td><td><b>'+fmt(totalInCash)+'</b></td></tr>';
+  html += '<tr style="background:#e3f2fd;font-weight:700;"><td>الفرق في المبالغ (التوريد - النقدي من الفواتير)</td><td style="'+(r.cashDiff !== 0 ? 'color:var(--danger);' : 'color:var(--success);')+'">'+(r.cashDiff !== 0 ? (r.cashDiff > 0 ? '+' : '') + fmt(r.cashDiff) + ' ر.س' : '✅ متوافق تماماً')+'</td></tr>';
   html += '</tbody></table></div></div>';
 
   // Summary KPI cards
   html += '<div style="font-weight:700;color:var(--primary);margin-bottom:10px;font-size:15px;">📋 ملخص سريع</div>';
   html += '<div class="kpi-grid">';
-  html += `<div class="kpi-card ${r.cardDiff !== 0 ? 'danger' : 'success'}"><div class="value">${r.cardDiff !== 0 ? (r.cardDiff > 0 ? '+' : '') + r.cardDiff : '✅'}</div><div class="label">فرق الكروت</div></div>`;
-  html += `<div class="kpi-card ${r.cashDiff !== 0 ? 'danger' : 'success'}"><div class="value">${r.cashDiff !== 0 ? (r.cashDiff > 0 ? '+' : '') + fmt(r.cashDiff) : '✅'}</div><div class="label">فرق المبالغ</div></div>`;
-  html += `<div class="kpi-card info"><div class="value">${fmt(r.totalDebt||0)}</div><div class="label">ديون آجلة</div></div>`;
-  html += `<div class="kpi-card warning"><div class="value">${fmt(r.freeValue||0)}</div><div class="label">قيمة المجاني</div></div>`;
+  html += '<div class="kpi-card '+(r.cardDiff !== 0 ? 'danger' : 'success')+'"><div class="value">'+(r.cardDiff !== 0 ? (r.cardDiff > 0 ? '+' : '') + r.cardDiff : '✅')+'</div><div class="label">فرق الكروت</div></div>';
+  html += '<div class="kpi-card '+(r.cashDiff !== 0 ? 'danger' : 'success')+'"><div class="value">'+(r.cashDiff !== 0 ? (r.cashDiff > 0 ? '+' : '') + fmt(r.cashDiff) : '✅')+'</div><div class="label">فرق المبالغ</div></div>';
+  html += '<div class="kpi-card info"><div class="value">'+fmt(r.totalDebt||0)+'</div><div class="label">ديون آجلة</div></div>';
+  html += '<div class="kpi-card warning"><div class="value">'+fmt(r.freeValue||0)+'</div><div class="label">قيمة المجاني</div></div>';
   html += '</div>';
-
   html += '</div>';
   el('daily-result').innerHTML = html;
 }
 
 async function loadDailyReport(r) {
   el('daily-date').value = r.date;
-  CATS.forEach(c => { el('start-'+c).value = r.startStock?.[c] || 0; el('end-'+c).value = r.endStock?.[c] || 0; });
+  CATS.forEach(c => { 
+    el('start-'+c).value = r.startStock?.[c] || 0; 
+    el('recv-'+c).value = r.receivedFromOwner?.[c] || 0;
+    el('end-'+c).value = r.endStock?.[c] || 0; 
+  });
   el('cash-bag').value = r.cashBag || 0;
   el('bank-deposit').value = r.bankDeposit || 0;
   el('expenses').value = r.expenses || 0;
@@ -1104,29 +1104,28 @@ async function loadDailyReport(r) {
     r.points.forEach((pd, idx) => {
       const cardId = 'dpc-'+idx;
       dailyPointCards.push(cardId);
-      const opts = allPointsCache.map(p => `<option value="${p.id}" ${p.id==pd.pointId?'selected':''}>${p.name}</option>`).join('');
+      const opts = allPointsCache.map(p => '<option value="'+p.id+'" '+(p.id==pd.pointId?'selected':'')+'>'+p.name+'</option>').join('');
       const div = document.createElement('div');
       div.className = 'point-card';
       div.id = cardId;
       let val = 0; CATS.forEach(c => val += (pd['s'+c]||0) * prices[c].sell);
       const freeVal = (pd.free100||0)*prices[100].sell + (pd.free250||0)*prices[250].sell;
-      div.innerHTML = `
-        <div class="point-card-header"><div class="point-card-title">🏪 نقطة البيع</div><button class="btn danger small" onclick="removeDailyPoint('${cardId}')">🗑️ حذف</button></div>
-        <div class="form-group"><label for="dpc-${idx}-point">اختر النقطة</label><select id="dpc-${idx}-point">${opts}</select></div>
-        <div class="form-row">
-          <div class="form-group"><label for="dpc-${idx}-100">100 ريال</label><input type="number" id="dpc-${idx}-100" value="${pd['s100']||0}" min="0" onchange="calcDailyPoint(${idx})"></div>
-          <div class="form-group"><label for="dpc-${idx}-250">250 ريال</label><input type="number" id="dpc-${idx}-250" value="${pd['s250']||0}" min="0" onchange="calcDailyPoint(${idx})"></div>
-          <div class="form-group"><label for="dpc-${idx}-500">500 ريال</label><input type="number" id="dpc-${idx}-500" value="${pd['s500']||0}" min="0" onchange="calcDailyPoint(${idx})"></div>
-          <div class="form-group"><label for="dpc-${idx}-1000">1000 ريال</label><input type="number" id="dpc-${idx}-1000" value="${pd['s1000']||0}" min="0" onchange="calcDailyPoint(${idx})"></div>
-        </div>
-        <div class="form-row">
-          <div class="form-group"><label for="dpc-${idx}-cash">💵 نقدي</label><input type="number" id="dpc-${idx}-cash" value="${pd.cash||0}" min="0"></div>
-          <div class="form-group"><label for="dpc-${idx}-debt">📋 آجل</label><input type="number" id="dpc-${idx}-debt" value="${pd.debt||0}" min="0"></div>
-          <div class="form-group"><label for="dpc-${idx}-free100">🎁 مجاني 100</label><input type="number" id="dpc-${idx}-free100" value="${pd.free100||0}" min="0" onchange="calcDailyPoint(${idx})"></div>
-          <div class="form-group"><label for="dpc-${idx}-free250">🎁 مجاني 250</label><input type="number" id="dpc-${idx}-free250" value="${pd.free250||0}" min="0" onchange="calcDailyPoint(${idx})"></div>
-        </div>
-        <div class="point-summary" id="dpc-${idx}-summary">القيمة: ${fmt(val)} ر.س | المجاني: ${fmt(freeVal)} ر.س</div>
-      `;
+      div.innerHTML = 
+        '<div class="point-card-header"><div class="point-card-title">🏪 نقطة البيع</div><button class="btn danger small" onclick="removeDailyPoint(''+cardId+'')">🗑️ حذف</button></div>' +
+        '<div class="form-group"><label for="dpc-'+idx+'-point">اختر النقطة</label><select id="dpc-'+idx+'-point">'+opts+'</select></div>' +
+        '<div class="form-row">' +
+          '<div class="form-group"><label for="dpc-'+idx+'-100">100 ريال</label><input type="number" id="dpc-'+idx+'-100" value="'+(pd['s100']||0)+'" min="0" onchange="calcDailyPoint('+idx+')"></div>' +
+          '<div class="form-group"><label for="dpc-'+idx+'-250">250 ريال</label><input type="number" id="dpc-'+idx+'-250" value="'+(pd['s250']||0)+'" min="0" onchange="calcDailyPoint('+idx+')"></div>' +
+          '<div class="form-group"><label for="dpc-'+idx+'-500">500 ريال</label><input type="number" id="dpc-'+idx+'-500" value="'+(pd['s500']||0)+'" min="0" onchange="calcDailyPoint('+idx+')"></div>' +
+          '<div class="form-group"><label for="dpc-'+idx+'-1000">1000 ريال</label><input type="number" id="dpc-'+idx+'-1000" value="'+(pd['s1000']||0)+'" min="0" onchange="calcDailyPoint('+idx+')"></div>' +
+        '</div>' +
+        '<div class="form-row">' +
+          '<div class="form-group"><label for="dpc-'+idx+'-cash">💵 نقدي</label><input type="number" id="dpc-'+idx+'-cash" value="'+(pd.cash||0)+'" min="0"></div>' +
+          '<div class="form-group"><label for="dpc-'+idx+'-debt">📋 آجل</label><input type="number" id="dpc-'+idx+'-debt" value="'+(pd.debt||0)+'" min="0"></div>' +
+          '<div class="form-group"><label for="dpc-'+idx+'-free100">🎁 مجاني 100</label><input type="number" id="dpc-'+idx+'-free100" value="'+(pd.free100||0)+'" min="0" onchange="calcDailyPoint('+idx+')"></div>' +
+          '<div class="form-group"><label for="dpc-'+idx+'-free250">🎁 مجاني 250</label><input type="number" id="dpc-'+idx+'-free250" value="'+(pd.free250||0)+'" min="0" onchange="calcDailyPoint('+idx+')"></div>' +
+        '</div>' +
+        '<div class="point-summary" id="dpc-'+idx+'-summary">القيمة: '+fmt(val)+' ر.س | المجاني: '+fmt(freeVal)+' ر.س</div>';
       el('daily-points-container').appendChild(div);
     });
   }
@@ -1138,22 +1137,25 @@ function previewDaily() {
   if (!date) return alert('اختر التاريخ أولاً');
   let html = '<div class="print-area">';
   html += '<div class="print-header"><h2>📡 تقرير يومي — كروت الواي فاي</h2><p>التاريخ: ' + date + '</p></div>';
-  html += '<div class="print-summary"><p><b>📦 رصيد بداية اليوم:</b> 100: ' + num('start-100') + ' | 250: ' + num('start-250') + ' | 500: ' + num('start-500') + ' | 1000: ' + num('start-1000') + '</p></div>';
+  html += '<div class="print-summary"><p><b>📦 رصيد بداية اليوم:</b> 100: ' + num('start-100') + ' | 250: ' + num('start-250') + ' | 500: ' + num('start-500') + ' | 1000: ' + num('start-1000') + '</p>';
+  html += '<p><b>📥 استلام من المالك:</b> 100: ' + num('recv-100') + ' | 250: ' + num('recv-250') + ' | 500: ' + num('recv-500') + ' | 1000: ' + num('recv-1000') + '</p></div>';
   html += '<table class="print-table"><thead><tr><th>النقطة</th><th>100</th><th>250</th><th>500</th><th>1000</th><th>نقدي</th><th>آجل</th><th>مجاني 100</th><th>مجاني 250</th><th>القيمة</th></tr></thead><tbody>';
   let totalVal = 0, totalCash = 0, totalDebt = 0, totalF100 = 0, totalF250 = 0;
   for (let i = 0; i < dailyPointCards.length; i++) {
-    const pointEl = el('dpc-'+i+'-point');
+    const cardId = dailyPointCards[i];
+    const idx = parseInt(cardId.split('-')[1]);
+    const pointEl = el('dpc-'+idx+'-point');
     if (!pointEl) continue;
     const pName = pointEl.options[pointEl.selectedIndex]?.text || '';
-    let val = 0; CATS.forEach(c => val += num('dpc-'+i+'-'+c) * prices[c].sell);
-    const cash = num('dpc-'+i+'-cash');
-    const debt = num('dpc-'+i+'-debt');
-    const f100 = num('dpc-'+i+'-free100');
-    const f250 = num('dpc-'+i+'-free250');
+    let val = 0; CATS.forEach(c => val += num('dpc-'+idx+'-'+c) * prices[c].sell);
+    const cash = num('dpc-'+idx+'-cash');
+    const debt = num('dpc-'+idx+'-debt');
+    const f100 = num('dpc-'+idx+'-free100');
+    const f250 = num('dpc-'+idx+'-free250');
     totalVal += val; totalCash += cash; totalDebt += debt; totalF100 += f100; totalF250 += f250;
-    html += `<tr><td>${pName}</td><td>${num('dpc-'+i+'-100')}</td><td>${num('dpc-'+i+'-250')}</td><td>${num('dpc-'+i+'-500')}</td><td>${num('dpc-'+i+'-1000')}</td><td>${fmt(cash)}</td><td>${fmt(debt)}</td><td>${f100}</td><td>${f250}</td><td>${fmt(val)}</td></tr>`;
+    html += '<tr><td>'+pName+'</td><td>'+num('dpc-'+idx+'-100')+'</td><td>'+num('dpc-'+idx+'-250')+'</td><td>'+num('dpc-'+idx+'-500')+'</td><td>'+num('dpc-'+idx+'-1000')+'</td><td>'+fmt(cash)+'</td><td>'+fmt(debt)+'</td><td>'+f100+'</td><td>'+f250+'</td><td>'+fmt(val)+'</td></tr>';
   }
-  html += `<tr style="font-weight:700;background:#e3f2fd;"><td>الإجمالي</td><td>-</td><td>-</td><td>-</td><td>-</td><td>${fmt(totalCash)}</td><td>${fmt(totalDebt)}</td><td>${totalF100}</td><td>${totalF250}</td><td>${fmt(totalVal)}</td></tr>`;
+  html += '<tr style="font-weight:700;background:#e3f2fd;"><td>الإجمالي</td><td>-</td><td>-</td><td>-</td><td>-</td><td>'+fmt(totalCash)+'</td><td>'+fmt(totalDebt)+'</td><td>'+totalF100+'</td><td>'+totalF250+'</td><td>'+fmt(totalVal)+'</td></tr>';
   html += '</tbody></table>';
   html += '<div class="print-summary"><p><b>💰 الإجماليات:</b> مبيعات: ' + fmt(totalVal) + ' ر.س | نقدي: ' + fmt(totalCash) + ' | آجل: ' + fmt(totalDebt) + '</p>';
   html += '<p><b>📑 المصروفات:</b> الكيس: ' + fmt(num('cash-bag')) + ' | إيداع: ' + fmt(num('bank-deposit')) + ' | مصروفات: ' + fmt(num('expenses')) + ' (' + (el('expenses-desc').value || '-') + ')</p>';
@@ -1177,17 +1179,17 @@ async function loadDailyLog() {
   const filtered = reports.filter(r => r.date >= from && r.date <= to).sort((a,b) => a.date.localeCompare(b.date));
   let html = '<div class="table-wrap"><table><thead><tr><th>التاريخ</th><th>مبيعات</th><th>نقدي</th><th>آجل</th><th>مجاني</th><th>مصروفات</th><th>كروت</th><th>مبالغ</th><th></th></tr></thead><tbody>';
   filtered.forEach(r => {
-    html += `<tr>
-      <td><b>${r.date}</b></td>
-      <td>${fmt(r.totalSoldValue||0)}</td>
-      <td>${fmt(r.cashBag||0)}</td>
-      <td>${fmt(r.totalDebt||0)}</td>
-      <td>${fmt(r.freeValue||0)}</td>
-      <td>${fmt(r.expenses||0)}</td>
-      <td style="color:${r.cardDiff!==0?'var(--danger)':'var(--success)'}">${r.cardDiff!==0?'⚠️ '+r.cardDiff:'✅'}</td>
-      <td style="color:${r.cashDiff!==0?'var(--danger)':'var(--success)'}">${r.cashDiff!==0?'⚠️ '+fmt(r.cashDiff):'✅'}</td>
-      <td><button class="btn danger small" onclick="deleteDailyReport(${r.id})" style="padding:4px 8px;font-size:11px;">🗑️</button></td>
-    </tr>`;
+    html += '<tr>' +
+      '<td><b>'+r.date+'</b></td>' +
+      '<td>'+fmt(r.totalSoldValue||0)+'</td>' +
+      '<td>'+fmt(r.cashBag||0)+'</td>' +
+      '<td>'+fmt(r.totalDebt||0)+'</td>' +
+      '<td>'+fmt(r.freeValue||0)+'</td>' +
+      '<td>'+fmt(r.expenses||0)+'</td>' +
+      '<td style="color:'+(r.cardDiff!==0?'var(--danger)':'var(--success)')+'">'+(r.cardDiff!==0?'⚠️ '+r.cardDiff:'✅')+'</td>' +
+      '<td style="color:'+(r.cashDiff!==0?'var(--danger)':'var(--success)')+'">'+(r.cashDiff!==0?'⚠️ '+fmt(r.cashDiff):'✅')+'</td>' +
+      '<td><button class="btn danger small" onclick="deleteDailyReport('+r.id+')" style="padding:4px 8px;font-size:11px;">🗑️</button></td>' +
+    '</tr>';
   });
   html += '</tbody></table></div>';
   el('log-result').innerHTML = html || '<div class="alert info">لا توجد تقارير في الفترة المحددة</div>';
@@ -1204,7 +1206,7 @@ async function initCollections() {
   el('coll-date').value = ts();
   const points = await getAll('points');
   let opts = '<option value="">-- اختر النقطة --</option>';
-  points.forEach(p => opts += `<option value="${p.id}">${p.name}</option>`);
+  points.forEach(p => opts += '<option value="'+p.id+'">'+p.name+'</option>');
   el('coll-point').innerHTML = opts;
   el('coll-debt-box').style.display = 'none';
   refreshCollList();
@@ -1239,7 +1241,7 @@ async function saveCollection() {
   const note = el('coll-note').value.trim();
   if (!date || !pointId || amount <= 0) return alert('أكمل البيانات المطلوبة');
   const debt = await getPointDebt(pointId);
-  if (amount > debt) return alert(`المبلغ أكبر من الدين! المستحق: ${fmt(debt)} ر.س`);
+  if (amount > debt) return alert('المبلغ أكبر من الدين! المستحق: '+fmt(debt)+' ر.س');
   await add('collections', { date, pointId, amount, method, note, ts: Date.now() });
   alertBox('coll-msg', '✅ تم تسجيل التحصيل', 'success');
   el('coll-amount').value = 0; el('coll-note').value = '';
@@ -1254,7 +1256,7 @@ async function refreshCollList() {
   let html = '';
   collections.forEach(c => {
     const p = points.find(x => x.id === c.pointId);
-    html += `<tr><td>${c.date}</td><td>${p?.name||c.pointId}</td><td><b>${fmt(c.amount)}</b> ر.س</td><td>${c.method==='cash'?'💵 نقدي':'🏦 بنكي'}</td><td>${c.note||'-'}</td><td><button class="btn danger small" onclick="deleteCollection(${c.id})" style="padding:4px 8px;font-size:11px;">🗑️</button></td></tr>`;
+    html += '<tr><td>'+c.date+'</td><td>'+(p?.name||c.pointId)+'</td><td><b>'+fmt(c.amount)+'</b> ر.س</td><td>'+(c.method==='cash'?'💵 نقدي':'🏦 بنكي')+'</td><td>'+(c.note||'-')+'</td><td><button class="btn danger small" onclick="deleteCollection('+c.id+')" style="padding:4px 8px;font-size:11px;">🗑️</button></td></tr>';
   });
   el('coll-list').innerHTML = html || '<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:20px;">لا توجد تحصيلات</td></tr>';
 }
@@ -1285,16 +1287,16 @@ async function refreshMySales() {
   sales.sort((a,b) => b.ts - a.ts);
   let html = '';
   sales.forEach(s => {
-    html += `<tr><td>${s.date}</td><td>${s.items[100]||0}</td><td>${s.items[250]||0}</td><td>${s.items[500]||0}</td><td>${s.items[1000]||0}</td><td><b>${fmt(s.totalValue)}</b> ر.س</td></tr>`;
+    html += '<tr><td>'+s.date+'</td><td>'+(s.items[100]||0)+'</td><td>'+(s.items[250]||0)+'</td><td>'+(s.items[500]||0)+'</td><td>'+(s.items[1000]||0)+'</td><td><b>'+fmt(s.totalValue)+'</b> ر.س</td></tr>';
   });
   el('my-list').innerHTML = html || '<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:20px;">لا توجد مبيعات</td></tr>';
 }
 
-// ==================== POINT REPORT ====================
+// ==================== POINT REPORT (IMPROVED) ====================
 async function initPointReport() {
   const points = await getAll('points');
   let opts = '<option value="">-- اختر النقطة --</option>';
-  points.forEach(p => opts += `<option value="${p.id}">${p.name}</option>`);
+  points.forEach(p => opts += '<option value="'+p.id+'">'+p.name+'</option>');
   el('rp-point').innerHTML = opts;
   const now = new Date();
   el('rp-from').value = new Date(now.getFullYear(), now.getMonth(), 1).toISOString().slice(0,10);
@@ -1304,12 +1306,13 @@ async function loadPointReport() {
   const pointId = parseInt(el('rp-point').value);
   const from = el('rp-from').value;
   const to = el('rp-to').value;
-  if (!pointId) return;
+  if (!pointId) return alert('اختر النقطة');
   const points = await getAll('points');
   const point = points.find(p => p.id === pointId);
   const reports = await getAll('dailyReports');
   const collections = await getAll('collections');
   const filtered = reports.filter(r => r.date >= from && r.date <= to && r.points && r.points.some(pd => pd.pointId === pointId));
+
   let totalSold = {}; CATS.forEach(c => totalSold[c] = 0);
   let totalCash = 0, totalDebt = 0, totalValue = 0, totalFree100 = 0, totalFree250 = 0;
   let rowsHtml = '';
@@ -1324,34 +1327,35 @@ async function loadPointReport() {
     totalFree250 += pd.free250 || 0;
     const dayVal = CATS.reduce((s,c) => s + (pd['s'+c]||0) * prices[c].sell, 0);
     totalValue += dayVal;
-    rowsHtml += `<tr><td>${r.date}</td><td>${pd['s100']||0}</td><td>${pd['s250']||0}</td><td>${pd['s500']||0}</td><td>${pd['s1000']||0}</td><td>${fmt(pd.cash||0)}</td><td>${fmt(pd.debt||0)}</td><td>${pd.free100||0}</td><td>${pd.free250||0}</td><td>${fmt(dayVal)}</td></tr>`;
+    rowsHtml += '<tr><td>'+r.date+'</td><td>'+(pd['s100']||0)+'</td><td>'+(pd['s250']||0)+'</td><td>'+(pd['s500']||0)+'</td><td>'+(pd['s1000']||0)+'</td><td>'+fmt(pd.cash||0)+'</td><td>'+fmt(pd.debt||0)+'</td><td>'+(pd.free100||0)+'</td><td>'+(pd.free250||0)+'</td><td>'+fmt(dayVal)+'</td></tr>';
   });
   const totalColl = collections.filter(c => c.pointId === pointId && c.date >= from && c.date <= to).reduce((a,b) => a + (b.amount||0), 0);
   const remaining = totalValue - totalCash - totalColl;
+
   let html = '<div class="card">';
-  html += '<div class="card-header"><div><div class="card-title">📊 ' + (point?.name||'') + '</div></div></div>';
+  html += '<div class="card-header"><div><div class="card-title">📊 '+(point?.name||'')+'</div></div></div>';
   html += '<div class="kpi-grid">';
-  html += `<div class="kpi-card"><div class="value">${fmt(totalValue)}</div><div class="label">إجمالي مشتريات</div></div>`;
-  html += `<div class="kpi-card"><div class="value">${fmt(totalCash)}</div><div class="label">نقدي بالفواتير</div></div>`;
-  html += `<div class="kpi-card"><div class="value">${fmt(totalColl)}</div><div class="label">محصل لاحقاً</div></div>`;
-  html += `<div class="kpi-card ${remaining>0?'danger':'success'}"><div class="value">${fmt(remaining)}</div><div class="label">${remaining>0?'متبقي (دين)':'✅ مسدد'}</div></div>`;
+  html += '<div class="kpi-card"><div class="value">'+fmt(totalValue)+'</div><div class="label">إجمالي مشتريات</div></div>';
+  html += '<div class="kpi-card"><div class="value">'+fmt(totalCash)+'</div><div class="label">نقدي بالفواتير</div></div>';
+  html += '<div class="kpi-card"><div class="value">'+fmt(totalColl)+'</div><div class="label">محصل لاحقاً</div></div>';
+  html += '<div class="kpi-card '+(remaining>0?'danger':'success')+'"><div class="value">'+fmt(remaining)+'</div><div class="label">'+(remaining>0?'متبقي (دين)':'✅ مسدد')+'</div></div>';
   html += '</div>';
   html += '<div class="table-wrap"><table><thead><tr><th>التاريخ</th><th>100</th><th>250</th><th>500</th><th>1000</th><th>نقدي</th><th>آجل</th><th>مجاني100</th><th>مجاني250</th><th>القيمة</th></tr></thead><tbody>';
   html += rowsHtml;
   html += '</tbody></table></div>';
-  // Collections detail
+
   const pointColls = collections.filter(c => c.pointId === pointId && c.date >= from && c.date <= to).sort((a,b) => a.date.localeCompare(b.date));
   if (pointColls.length > 0) {
     html += '<h3 style="margin:16px 0 8px;color:var(--primary);font-size:15px;">📋 سجل التحصيلات</h3>';
     html += '<div class="table-wrap"><table><thead><tr><th>التاريخ</th><th>المبلغ</th><th>الطريقة</th><th>الملاحظة</th></tr></thead><tbody>';
-    pointColls.forEach(c => html += `<tr><td>${c.date}</td><td>${fmt(c.amount)} ر.س</td><td>${c.method==='cash'?'💵 نقدي':'🏦 بنكي'}</td><td>${c.note||'-'}</td></tr>`);
+    pointColls.forEach(c => html += '<tr><td>'+c.date+'</td><td>'+fmt(c.amount)+' ر.س</td><td>'+(c.method==='cash'?'💵 نقدي':'🏦 بنكي')+'</td><td>'+(c.note||'-')+'</td></tr>');
     html += '</tbody></table></div>';
   }
   html += '</div>';
   el('rp-result').innerHTML = html;
 }
 
-// ==================== DISTRIBUTOR REPORT ====================
+// ==================== DISTRIBUTOR REPORT (IMPROVED) ====================
 function initDistReport() {
   const now = new Date();
   el('dr-from').value = new Date(now.getFullYear(), now.getMonth(), 1).toISOString().slice(0,10);
@@ -1362,14 +1366,22 @@ async function loadDistReport() {
   const to = el('dr-to').value;
   const reports = await getAll('dailyReports');
   const distTxs = await getAll('distTransactions');
+  const closes = await getAll('monthlyCloses');
+
   const filtered = reports.filter(r => r.date >= from && r.date <= to);
+  const filteredDist = distTxs.filter(t => t.type === 'toDist' && t.date >= from && t.date <= to);
+
+  // Opening balance from last close before 'from'
+  const lastClose = closes.filter(c => c.date < from).sort((a,b) => b.date.localeCompare(a.date))[0];
+  let opening = {};
+  CATS.forEach(c => opening[c] = lastClose ? (lastClose.distStock?.[c] || 0) : 0);
+
   let totalReceived = {}; CATS.forEach(c => totalReceived[c] = 0);
   let totalSold = {}; CATS.forEach(c => totalSold[c] = 0);
   let totalFree = { 100: 0, 250: 0 };
   let totalCash = 0, totalDebt = 0, totalExp = 0, totalBank = 0;
-  distTxs.filter(t => t.type === 'toDist' && t.date >= from && t.date <= to).forEach(t => {
-    CATS.forEach(c => totalReceived[c] += (t.items[c]||0));
-  });
+
+  filteredDist.forEach(t => CATS.forEach(c => totalReceived[c] += (t.items[c]||0)));
   filtered.forEach(r => {
     CATS.forEach(c => totalSold[c] += (r.totalSold?.[c]||0));
     totalFree[100] += r.totalFree100 || 0;
@@ -1379,36 +1391,117 @@ async function loadDistReport() {
     totalExp += r.expenses || 0;
     totalBank += r.bankDeposit || 0;
   });
-  const remaining = {};
-  CATS.forEach(c => remaining[c] = totalReceived[c] - totalSold[c] - (c===100?totalFree[100]:c===250?totalFree[250]:0));
-  let html = '<div class="card"><div class="card-header"><div class="card-title">📦 عهدة الموزع</div></div>';
-  html += '<div class="table-wrap"><table><thead><tr><th>الفئة</th><th>استلم</th><th>باع</th><th>مجاني</th><th>المتبقي النظري</th></tr></thead><tbody>';
-  CATS.forEach(c => html += `<tr><td><b>${c} ريال</b></td><td>${fmt(totalReceived[c])}</td><td>${fmt(totalSold[c])}</td><td>${fmt(c===100?totalFree[100]:c===250?totalFree[250]:0)}</td><td style="font-weight:700;color:var(--info)">${fmt(remaining[c])}</td></tr>`);
+
+  const theoretical = {};
+  CATS.forEach(c => theoretical[c] = opening[c] + totalReceived[c] - totalSold[c] - (c===100?totalFree[100]:c===250?totalFree[250]:0));
+
+  // Actual ending from last report in period
+  const lastReport = filtered.sort((a,b) => b.date.localeCompare(a.date))[0];
+  const actual = {};
+  CATS.forEach(c => actual[c] = lastReport ? (lastReport.endStock?.[c] || 0) : opening[c]);
+
+  let html = '<div class="card"><div class="card-header"><div class="card-title">📦 عهدة الموزع — الرصيد</div></div>';
+  html += '<div class="table-wrap"><table><thead><tr><th>الفئة</th><th>افتتاحي</th><th>استلم</th><th>باع</th><th>مجاني</th><th>نظري</th><th>فعلي</th><th>فرق</th></tr></thead><tbody>';
+  CATS.forEach(c => {
+    const diff = actual[c] - theoretical[c];
+    html += '<tr><td><b>'+c+' ريال</b></td><td>'+fmt(opening[c])+'</td><td>'+fmt(totalReceived[c])+'</td><td>'+fmt(totalSold[c])+'</td><td>'+fmt(c===100?totalFree[100]:c===250?totalFree[250]:0)+'</td><td>'+fmt(theoretical[c])+'</td><td>'+fmt(actual[c])+'</td><td style="font-weight:700;color:'+(diff!==0?'var(--danger)':'var(--success)')+'">'+(diff!==0?(diff>0?'+':'')+diff:'✅')+'</td></tr>';
+  });
   html += '</tbody></table></div></div>';
+
   html += '<div class="card"><div class="card-header"><div class="card-title">💰 المالية</div></div><div class="kpi-grid">';
-  html += `<div class="kpi-card"><div class="value">${fmt(totalCash)}</div><div class="label">نقدي في الكيس</div></div>`;
-  html += `<div class="kpi-card"><div class="value">${fmt(totalBank)}</div><div class="label">إيداع بنكي</div></div>`;
-  html += `<div class="kpi-card"><div class="value">${fmt(totalExp)}</div><div class="label">مصروفات تشغيل</div></div>`;
-  html += `<div class="kpi-card"><div class="value">${fmt(totalDebt)}</div><div class="label">ديون آجلة</div></div>`;
+  html += '<div class="kpi-card"><div class="value">'+fmt(totalCash)+'</div><div class="label">نقدي في الكيس</div></div>';
+  html += '<div class="kpi-card"><div class="value">'+fmt(totalBank)+'</div><div class="label">إيداع بنكي</div></div>';
+  html += '<div class="kpi-card"><div class="value">'+fmt(totalExp)+'</div><div class="label">مصروفات تشغيل</div></div>';
+  html += '<div class="kpi-card"><div class="value">'+fmt(totalDebt)+'</div><div class="label">ديون آجلة</div></div>';
   html += '</div></div>';
+
   html += '<div class="card"><div class="card-header"><div class="card-title">📑 مصروفات وإيداعات مفصلة</div></div>';
   html += '<div class="table-wrap"><table><thead><tr><th>التاريخ</th><th>النوع</th><th>المبلغ</th><th>الوصف / التفاصيل</th></tr></thead><tbody>';
   filtered.forEach(r => {
-    if (r.expenses > 0) html += `<tr><td>${r.date}</td><td>🔧 مصروفات</td><td>${fmt(r.expenses)} ر.س</td><td>${r.expensesDesc||'-'}</td></tr>`;
-    if (r.bankDeposit > 0) html += `<tr><td>${r.date}</td><td>🏦 إيداع بنكي</td><td>${fmt(r.bankDeposit)} ر.س</td><td>إيداع في الحساب</td></tr>`;
+    if (r.expenses > 0) html += '<tr><td>'+r.date+'</td><td>🔧 مصروفات</td><td>'+fmt(r.expenses)+' ر.س</td><td>'+(r.expensesDesc||'-')+'</td></tr>';
+    if (r.bankDeposit > 0) html += '<tr><td>'+r.date+'</td><td>🏦 إيداع بنكي</td><td>'+fmt(r.bankDeposit)+' ر.س</td><td>إيداع في الحساب</td></tr>';
   });
   html += '</tbody></table></div></div>';
+
   html += '<div class="card"><div class="card-header"><div class="card-title">📋 التقارير اليومية</div></div>';
   html += '<div class="table-wrap"><table><thead><tr><th>التاريخ</th><th>مبيعات</th><th>نقدي</th><th>آجل</th><th>مجاني</th><th>مصروفات</th><th>كروت</th><th>مبالغ</th></tr></thead><tbody>';
   filtered.sort((a,b) => a.date.localeCompare(b.date));
   filtered.forEach(r => {
-    html += `<tr><td>${r.date}</td><td>${fmt(r.totalSoldValue||0)}</td><td>${fmt(r.cashBag||0)}</td><td>${fmt(r.totalDebt||0)}</td><td>${fmt(r.freeValue||0)}</td><td>${fmt(r.expenses||0)}</td><td style="color:${r.cardDiff!==0?'var(--danger)':'var(--success)'}">${r.cardDiff!==0?'⚠️ '+r.cardDiff:'✅'}</td><td style="color:${r.cashDiff!==0?'var(--danger)':'var(--success)'}">${r.cashDiff!==0?'⚠️ '+fmt(r.cashDiff):'✅'}</td></tr>`;
+    html += '<tr><td>'+r.date+'</td><td>'+fmt(r.totalSoldValue||0)+'</td><td>'+fmt(r.cashBag||0)+'</td><td>'+fmt(r.totalDebt||0)+'</td><td>'+fmt(r.freeValue||0)+'</td><td>'+fmt(r.expenses||0)+'</td><td style="color:'+(r.cardDiff!==0?'var(--danger)':'var(--success)')+'">'+(r.cardDiff!==0?'⚠️ '+r.cardDiff:'✅')+'</td><td style="color:'+(r.cashDiff!==0?'var(--danger)':'var(--success)')+'">'+(r.cashDiff!==0?'⚠️ '+fmt(r.cashDiff):'✅')+'</td></tr>';
   });
   html += '</tbody></table></div></div>';
   el('dr-result').innerHTML = html;
 }
 
-// ==================== MONTHLY CLOSE ====================
+// ==================== PROFIT REPORT (NEW) ====================
+function initProfit() {
+  const now = new Date();
+  el('pr-from').value = new Date(now.getFullYear(), now.getMonth(), 1).toISOString().slice(0,10);
+  el('pr-to').value = ts();
+}
+async function loadProfitReport() {
+  const from = el('pr-from').value;
+  const to = el('pr-to').value;
+  const reports = await getAll('dailyReports');
+  const mySales = await getAll('mySales');
+  const distTxs = await getAll('distTransactions');
+
+  const filtered = reports.filter(r => r.date >= from && r.date <= to);
+  const filteredMySales = mySales.filter(s => s.date >= from && s.date <= to);
+  const filteredDist = distTxs.filter(t => t.type === 'toDist' && t.date >= from && t.date <= to);
+
+  let distProfit = 0; // (sell - cost) * sold
+  let ownerDirectProfit = 0; // (user - cost) * sold
+  let totalFreeCost = 0;
+  let totalRevenue = 0;
+
+  filtered.forEach(r => {
+    CATS.forEach(c => {
+      const sold = r.totalSold?.[c] || 0;
+      distProfit += sold * (prices[c].sell - prices[c].cost);
+      totalRevenue += sold * prices[c].sell;
+    });
+    totalFreeCost += (r.totalFree100 || 0) * prices[100].cost + (r.totalFree250 || 0) * prices[250].cost;
+  });
+
+  filteredMySales.forEach(s => {
+    CATS.forEach(c => {
+      const sold = s.items?.[c] || 0;
+      ownerDirectProfit += sold * (prices[c].user - prices[c].cost);
+      totalRevenue += sold * prices[c].user;
+    });
+  });
+
+  const totalProfit = distProfit + ownerDirectProfit - totalFreeCost;
+
+  let html = '<div class="card"><div class="card-header"><div class="card-title">📈 ملخص الأرباح</div></div>';
+  html += '<div class="kpi-grid">';
+  html += '<div class="kpi-card success"><div class="value">'+fmt(totalRevenue)+'</div><div class="label">إجمالي الإيرادات</div></div>';
+  html += '<div class="kpi-card info"><div class="value">'+fmt(distProfit)+'</div><div class="label">ربح الموزع (فارق البيع)</div></div>';
+  html += '<div class="kpi-card"><div class="value">'+fmt(ownerDirectProfit)+'</div><div class="label">ربحي المباشر</div></div>';
+  html += '<div class="kpi-card warning"><div class="value">'+fmt(totalFreeCost)+'</div><div class="label">تكلفة المجاني</div></div>';
+  html += '<div class="kpi-card success"><div class="value">'+fmt(totalProfit)+'</div><div class="label">صافي الربح</div></div>';
+  html += '</div></div>';
+
+  html += '<div class="card"><div class="card-header"><div class="card-title">📊 تفصيل الأرباح حسب الفئة</div></div>';
+  html += '<div class="table-wrap"><table><thead><tr><th>الفئة</th><th>مباع موزع</th><th>ربح الموزع</th><th>مباع مباشر</th><th>ربحي المباشر</th><th>مجاني</th><th>تكلفة مجاني</th></tr></thead><tbody>';
+  CATS.forEach(c => {
+    let soldDist = 0, soldDirect = 0, free100 = 0, free250 = 0;
+    filtered.forEach(r => { soldDist += r.totalSold?.[c] || 0; });
+    filteredMySales.forEach(s => { soldDirect += s.items?.[c] || 0; });
+    if (c === 100) filtered.forEach(r => { free100 += r.totalFree100 || 0; });
+    if (c === 250) filtered.forEach(r => { free250 += r.totalFree250 || 0; });
+    const freeCost = (c===100 ? free100 * prices[100].cost : c===250 ? free250 * prices[250].cost : 0);
+    const distP = soldDist * (prices[c].sell - prices[c].cost);
+    const ownP = soldDirect * (prices[c].user - prices[c].cost);
+    html += '<tr><td><b>'+c+' ريال</b></td><td>'+fmt(soldDist)+'</td><td>'+fmt(distP)+' ر.س</td><td>'+fmt(soldDirect)+'</td><td>'+fmt(ownP)+' ر.س</td><td>'+fmt(c===100?free100:c===250?free250:0)+'</td><td>'+fmt(freeCost)+' ر.س</td></tr>';
+  });
+  html += '</tbody></table></div></div>';
+
+  el('pr-result').innerHTML = html;
+}
+
+// ==================== MONTHLY CLOSE (IMPROVED) ====================
 function initMonthly() {
   const now = new Date();
   el('mc-year').value = now.getFullYear();
@@ -1417,14 +1510,15 @@ function initMonthly() {
 async function loadMonthlyClose() {
   const year = parseInt(el('mc-year').value);
   const month = parseInt(el('mc-month').value);
-  const from = `${year}-${String(month).padStart(2,'0')}-01`;
-  const to = `${year}-${String(month).padStart(2,'0')}-31`;
+  const from = year+'-'+String(month).padStart(2,'0')+'-01';
+  const to = year+'-'+String(month).padStart(2,'0')+'-31';
   const reports = await getAll('dailyReports');
   const distTxs = await getAll('distTransactions');
   const mySales = await getAll('mySales');
   const monthReports = reports.filter(r => r.date >= from && r.date <= to);
   const monthDist = distTxs.filter(t => t.type === 'toDist' && t.date >= from && t.date <= to);
   const monthMySales = mySales.filter(s => s.date >= from && s.date <= to);
+
   let totalSold = {}; CATS.forEach(c => totalSold[c] = 0);
   let totalCash = 0, totalDebt = 0, totalSoldValue = 0, totalFree100 = 0, totalFree250 = 0, totalExp = 0, totalBank = 0;
   monthReports.forEach(r => {
@@ -1437,40 +1531,45 @@ async function loadMonthlyClose() {
   monthDist.forEach(t => CATS.forEach(c => totalDistRec[c] += (t.items[c]||0)));
   let totalMySalesValue = 0, totalMySold = {}; CATS.forEach(c => totalMySold[c] = 0);
   monthMySales.forEach(s => { totalMySalesValue += s.totalValue||0; CATS.forEach(c => totalMySold[c] += (s.items[c]||0)); });
-  const distRem = {}; CATS.forEach(c => distRem[c] = totalDistRec[c] - totalSold[c] - (c===100?totalFree100:c===250?totalFree250:0));
+  const distRem = {};
+  CATS.forEach(c => distRem[c] = totalDistRec[c] - totalSold[c] - (c===100?totalFree100:c===250?totalFree250:0));
+
   let html = '<div class="card"><div class="card-header"><div class="card-title">📊 ملخص الشهر</div></div><div class="kpi-grid">';
-  html += `<div class="kpi-card"><div class="value">${fmt(totalSoldValue)}</div><div class="label">مبيعات الموزع</div></div>`;
-  html += `<div class="kpi-card"><div class="value">${fmt(totalCash)}</div><div class="label">نقدي محصل</div></div>`;
-  html += `<div class="kpi-card"><div class="value">${fmt(totalDebt)}</div><div class="label">ديون آجلة</div></div>`;
-  html += `<div class="kpi-card"><div class="value">${fmt(totalMySalesValue)}</div><div class="label">مبيعاتي المباشرة</div></div>`;
+  html += '<div class="kpi-card"><div class="value">'+fmt(totalSoldValue)+'</div><div class="label">مبيعات الموزع</div></div>';
+  html += '<div class="kpi-card"><div class="value">'+fmt(totalCash)+'</div><div class="label">نقدي محصل</div></div>';
+  html += '<div class="kpi-card"><div class="value">'+fmt(totalDebt)+'</div><div class="label">ديون آجلة</div></div>';
+  html += '<div class="kpi-card"><div class="value">'+fmt(totalMySalesValue)+'</div><div class="label">مبيعاتي المباشرة</div></div>';
   html += '</div></div>';
+
   html += '<div class="card"><div class="card-header"><div class="card-title">📦 حركات الكروت</div></div>';
   html += '<div class="table-wrap"><table><thead><tr><th>الفئة</th><th>صرفت للموزع</th><th>باع الموزع</th><th>مجاني</th><th>بعت أنا</th><th>متبقي مع الموزع</th></tr></thead><tbody>';
-  CATS.forEach(c => html += `<tr><td><b>${c} ريال</b></td><td>${fmt(totalDistRec[c])}</td><td>${fmt(totalSold[c])}</td><td>${fmt(c===100?totalFree100:c===250?totalFree250:0)}</td><td>${fmt(totalMySold[c])}</td><td style="font-weight:700;color:var(--info)">${fmt(distRem[c])}</td></tr>`);
+  CATS.forEach(c => html += '<tr><td><b>'+c+' ريال</b></td><td>'+fmt(totalDistRec[c])+'</td><td>'+fmt(totalSold[c])+'</td><td>'+fmt(c===100?totalFree100:c===250?totalFree250:0)+'</td><td>'+fmt(totalMySold[c])+'</td><td style="font-weight:700;color:var(--info)">'+fmt(distRem[c])+'</td></tr>');
   html += '</tbody></table></div></div>';
+
   html += '<div class="card"><div class="card-header"><div class="card-title">📦 رصيد الافتتاح للشهر القادم</div></div>';
   html += '<p style="color:var(--muted);font-size:13px;margin-bottom:12px;">استخدم هذه القيم كرصيد بداية للشهر القادم:</p>';
   html += '<div style="background:#f8f9fa;border-radius:10px;padding:14px;margin-bottom:12px;"><div style="font-weight:700;color:var(--primary);margin-bottom:8px;">📦 مع الموزع</div><div class="form-row">';
-  CATS.forEach(c => html += `<div class="form-group"><label for="mc-dist-${c}">${c} ريال</label><input type="number" id="mc-dist-${c}" value="${distRem[c]||0}"></div>`);
+  CATS.forEach(c => html += '<div class="form-group"><label for="mc-dist-'+c+'">'+c+' ريال</label><input type="number" id="mc-dist-'+c+'" value="'+(distRem[c]||0)+'"></div>');
   html += '</div></div>';
+
   const myStock = await getMyStock(to);
   html += '<div style="background:#f8f9fa;border-radius:10px;padding:14px;margin-bottom:12px;"><div style="font-weight:700;color:var(--primary);margin-bottom:8px;">📦 معي (المالك)</div><div class="form-row">';
-  CATS.forEach(c => html += `<div class="form-group"><label for="mc-my-${c}">${c} ريال</label><input type="number" id="mc-my-${c}" value="${myStock[c]||0}"></div>`);
+  CATS.forEach(c => html += '<div class="form-group"><label for="mc-my-'+c+'">'+c+' ريال</label><input type="number" id="mc-my-'+c+'" value="'+(myStock[c]||0)+'"></div>');
   html += '</div></div>';
-  html += `<button class="btn success" onclick="saveMonthlyClose(${year},${month})">💾 حفظ كإغلاق شهري</button>`;
+  html += '<button class="btn success" onclick="saveMonthlyClose('+year+','+month+')">💾 حفظ كإغلاق شهري</button>';
   html += '</div>';
   el('mc-result').innerHTML = html;
 }
 async function saveMonthlyClose(year, month) {
   const distStock = {}; CATS.forEach(c => distStock[c] = num('mc-dist-'+c));
   const myStock = {}; CATS.forEach(c => myStock[c] = num('mc-my-'+c));
-  const date = `${year}-${String(month).padStart(2,'0')}-31`;
+  const date = year+'-'+String(month).padStart(2,'0')+'-31';
   await add('monthlyCloses', { year, month, date, distStock, myStock, ts: Date.now() });
   alert('✅ تم حفظ الإغلاق الشهري بنجاح');
   refreshDashboard();
 }
 
-// ==================== DASHBOARD ====================
+// ==================== DASHBOARD (IMPROVED) ====================
 async function refreshDashboard() {
   const today = ts();
   setText('dash-date-label', today);
@@ -1481,7 +1580,7 @@ async function refreshDashboard() {
   setText('dash-total-dist', fmt(CATS.reduce((a,c) => a + distStock[c], 0)));
   const points = await getAll('points');
   setText('dash-points-count', points.length);
-  // Today
+
   const reports = await getAll('dailyReports');
   const todayReports = reports.filter(r => r.date === today);
   let tSales = 0, tCash = 0, tDebt = 0, tFree = 0;
@@ -1491,9 +1590,9 @@ async function refreshDashboard() {
   setText('dash-debt-today', fmt(tDebt) + ' ر.س');
   setText('dash-free', fmt(tFree) + ' ر.س');
   setText('dash-today-total', fmt(tSales) + ' ر.س');
-  // Month
+
   const now = new Date();
-  const from = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-01`;
+  const from = now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0')+'-01';
   const monthReports = reports.filter(r => r.date >= from && r.date <= today);
   let mSales = 0, mCash = 0, mDebt = 0;
   monthReports.forEach(r => { mSales += r.totalSoldValue||0; mCash += r.cashBag||0; mDebt += r.totalDebt||0; });
@@ -1503,14 +1602,14 @@ async function refreshDashboard() {
   const mySales = await getAll('mySales');
   const monthMySales = mySales.filter(s => s.date >= from && s.date <= today);
   setText('dash-month-mine', fmt(monthMySales.reduce((a,b) => a + (b.totalValue||0), 0)) + ' ر.س');
-  // Alerts
+
   let alerts = '';
   CATS.forEach(c => {
-    if (myStock[c] < alertMin) alerts += `<div class="alert warning">⚠️ رصيدك من فئة ${c} منخفض: ${fmt(myStock[c])} كرت فقط</div>`;
-    if (distStock[c] < alertMin) alerts += `<div class="alert warning">⚠️ رصيد الموزع من فئة ${c} منخفض: ${fmt(distStock[c])} كرت فقط</div>`;
+    if (myStock[c] < alertMin) alerts += '<div class="alert warning">⚠️ رصيدك من فئة '+c+' منخفض: '+fmt(myStock[c])+' كرت فقط</div>';
+    if (distStock[c] < alertMin) alerts += '<div class="alert warning">⚠️ رصيد الموزع من فئة '+c+' منخفض: '+fmt(distStock[c])+' كرت فقط</div>';
   });
   el('dash-alerts').innerHTML = alerts;
-  // Top debts
+
   const collections = await getAll('collections');
   let debts = [];
   for (const p of points) {
@@ -1531,7 +1630,7 @@ async function refreshDashboard() {
   const maxDebt = debts.length > 0 ? debts[0].amount : 1;
   debts.slice(0,5).forEach(d => {
     const pct = Math.round((d.amount / maxDebt) * 100);
-    debtHtml += `<tr><td><b>${d.name}</b></td><td style="color:var(--danger);font-weight:700;">${fmt(d.amount)} ر.س</td><td><div class="progress-bar"><div class="fill" style="width:${pct}%;background:var(--danger)"></div></div></td></tr>`;
+    debtHtml += '<tr><td><b>'+d.name+'</b></td><td style="color:var(--danger);font-weight:700;">'+fmt(d.amount)+' ر.س</td><td><div class="progress-bar"><div class="fill" style="width:'+pct+'%;background:var(--danger)"></div></div></td></tr>';
   });
   debtHtml += '</tbody></table></div>';
   if (debts.length === 0) debtHtml = '<div class="alert success">✅ لا توجد ديون مستحقة — جميع النقاط مسددة!</div>';
@@ -1543,7 +1642,7 @@ async function exportData() {
   const data = {};
   const stores = ['points','stockIn','distTransactions','dailyReports','collections','mySales','monthlyCloses','settings'];
   for (const s of stores) data[s] = await getAll(s);
-  const blob = new Blob([JSON.stringify({ v: 'pro-1.0', data, prices, freePct, alertMin, exportDate: ts() }, null, 2)], { type: 'application/json' });
+  const blob = new Blob([JSON.stringify({ v: 'pro-2.0', data, prices, freePct, alertMin, exportDate: ts() }, null, 2)], { type: 'application/json' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
   a.download = 'wifi-pro-backup-' + ts() + '.json';
@@ -1589,7 +1688,6 @@ window.addEventListener('DOMContentLoaded', async () => {
     el('my-date').value = ts();
     el('stock-date').value = ts();
     el('coll-date').value = ts();
-    // Register SW
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js?v=pro').then(r => r.update()).catch(() => {});
     }
@@ -1597,6 +1695,5 @@ window.addEventListener('DOMContentLoaded', async () => {
   } catch (e) { console.error(e); alert('فشل تحميل النظام: ' + e.message); }
 });
 </script>
-
 </body>
 </html>
